@@ -33,9 +33,8 @@
 
                 <li class="nav-item">
                     <div class="">
-                        <button class="btn navbutton" onclick="geo()">
-                            <img class="iconGPS" src="images/geo.png" alt="gps">
-                            <input class="navbutton buttonNoBorder" type="submit" id="position" value="" readonly="readonly" placeholder="Cerca posizione" />
+                        <button class="btn navbutton" onclick="geo()" data-toggle="tooltip-location">
+                            <img class="iconGPS" src="images/geo.png" alt="gps"><input class="navbutton buttonNoBorder" type="submit" id="position" value="" readonly="readonly" placeholder="Cerca posizione" />
                         </button>
                     </div>
                 </li>
@@ -84,7 +83,7 @@
                                 </div>
                                 <p>oppure</p>
                                 <div class="">
-                                    <button class="btn btn-secondary" data-dismiss="modal" onclick="geo()">
+                                    <button class="btn btn-secondary" data-dismiss="modal" onclick="geo()" data-toggle="tooltip-location">
                                         <img class="iconGPS" src="images/geo.png" alt="gps">
                                         Geolocalizzati
                                     </button>

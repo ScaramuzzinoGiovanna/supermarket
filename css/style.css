@@ -92,6 +92,8 @@
     border: none;
     background-color: transparent;
     outline: none;
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
 .buttonExt {
@@ -199,7 +201,7 @@
 /*}*/
 
 .super-logo {
-    height: 16px;
+    height: 32px;
 }
 
 .btn.add:hover {
@@ -290,7 +292,7 @@ body {
     padding-left: 3rem ;
 }
 
-.table td img{
+.table td img.prodImg{
     width: 150px;
     height: 150px;
 

@@ -15,3 +15,12 @@
             html: true
         });
     });
+
+    $(document).ready(function () {
+        $('[data-toggle="tooltip-location"]').tooltip({
+            placement: 'bottom',
+            title: " <h6>Imposta località</h6> ",
+            animation: true,
+            html: true
+        });
+    });
