@@ -7,7 +7,7 @@ $product = str_replace('_', ' ', $productLink);
 $arr = [];
 $productError="";
 
-$query = "SELECT product.name AS productName, product.imgpath AS productImgpath, supermarket.address AS supermarketAddress, supermarket.city AS supermarketCity, enterprise.name AS enterpriseName, enterprise.imgpath AS enterpriseImgpath 
+$query = "SELECT product.name AS productName, product.imgpath AS productImgpath, productatmarket.price AS productatmarketPrice, supermarket.address AS supermarketAddress, supermarket.city AS supermarketCity, enterprise.name AS enterpriseName, enterprise.imgpath AS enterpriseImgpath 
     FROM (((product JOIN productatmarket ON product.id=productatmarket.product) JOIN supermarket ON supermarket.id=productatmarket.supermarket) JOIN enterprise ON enterprise.id=supermarket.enterprise) 
     WHERE product.name='".$product."'";
 
@@ -17,7 +17,7 @@ if($result = mysqli_query($con, $query)){
         while ($r = mysqli_fetch_assoc($result)) {
             $prodName = $r['productName'];
             $prodImg = $r['productImgpath'];
-            $arr[] = array( $r['enterpriseImgpath'],$r['supermarketAddress'], $r['supermarketCity'], $r['enterpriseName']);
+            $arr[] = array( $r['enterpriseImgpath'],$r['supermarketAddress'], $r['supermarketCity'], $r['enterpriseName'], $r['productatmarketPrice']);
         }
     }elseif ($numRows  != 1){
         $productError = "C'è stato un problema nel trovare i dati del prodotto";
