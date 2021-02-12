@@ -1,5 +1,6 @@
 <?php
 include("templates/head_template.php");
+include("utility/product.php");
 ?>
 <meta name="description" content="Supermarket products" />
 

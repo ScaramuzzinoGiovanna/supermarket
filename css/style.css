@@ -207,7 +207,7 @@
 }
 
 .breadcrumb {
-    background-color: white;
+    background-color: whitesmoke;
 }
 
 .breadcrumb-item + .breadcrumb-item {
@@ -284,3 +284,22 @@ body {
 .col-margin-0{
     margin-bottom: 0px;
 }
+
+
+.table th, .table td{
+    padding-left: 3rem ;
+}
+
+.table td img{
+    width: 150px;
+    height: 150px;
+
+}
+
+.containerPaddingMargin{
+    margin-top:50px;
+    margin-bottom:50px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+

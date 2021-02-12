@@ -73,6 +73,3 @@ function error_callback(error) {
             break;
     }
 }
-$('#geoModal').on('show.bs.modal', function () {
-    $('#myInput').focus()
-  })

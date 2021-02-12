@@ -23,7 +23,7 @@ function autocomplete(inp, arr) {
   let focusInput = document.getElementById("livesearch");
 
   /*execute a function when someone writes in the text field:*/
-  var a, b, i, val = document.getElementById("livesearch").value;
+  var a, b, val = document.getElementById("livesearch").value;
 
   /*close any already open lists of autocompleted values*/
   closeAllLists();
@@ -44,7 +44,7 @@ function autocomplete(inp, arr) {
   for (i = 0; i < arr.length; i++) {
     b = document.createElement("DIV");
     b.style.cssText = 'padding:0;'
-    b.innerHTML = "<a href='product_view.php?id='> <div>" + arr[i] + "</div></a>";
+    b.innerHTML = "<a href='product_view.php?product="+ arr[i].replace(/ /g,"_") +"'> <div>" + arr[i] + "</div></a>";
     a.appendChild(b);
   }
 
