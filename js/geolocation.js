@@ -2,9 +2,24 @@
 //    geo()
 //});
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function loadGeo() {
+    var location = capitalizeFirstLetter(document.getElementById("loc").value)
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "utility/location.php?loc=" + location, true);
+    xmlhttp.send();
+    document.getElementById("position").value = location;
+    document.getElementById("loc").value = ""
+}
+
+
 function geo() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, error_callback, {enableHighAccuracy: false});
+        navigator.geolocation.getCurrentPosition(showPosition, error_callback, { enableHighAccuracy: false });
     } else {
         alert('No geolocalization')
     }
@@ -24,8 +39,8 @@ function displayLocation(latitude, longitude) {
         result = r;
         document.getElementById("position").value = result
         // alert(result)
-        var xmlhttp=new XMLHttpRequest();
-        xmlhttp.open("GET","utility/location.php?loc="+result,true);
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "utility/location.php?loc=" + result, true);
         xmlhttp.send();
     })
 }
@@ -44,7 +59,7 @@ function convertToAddress(geopos) {
     })
     //return promise object
     return defObject.promise();
-    
+
 }
 
 function error_callback(error) {
@@ -53,22 +68,22 @@ function error_callback(error) {
         case error.PERMISSION_DENIED:
             console.log("Permesso negato dall'utente");
             alert('Spiacenti! Hai negato l\'autorizzazione per la Geolocalizzazione')
-            document.getElementById("position").value = "Cerca posizione"
+            //document.getElementById("position").value = "Cerca posizione"
             position.style.color = '#989898';
             break;
         case error.POSITION_UNAVAILABLE:
             console.log("Impossibile determinare la posizione corrente");
-            document.getElementById("position").value = "Cerca posizione"
+            //document.getElementById("position").value = "Cerca posizione"
             position.style.color = '#989898';
             break;
         case error.TIMEOUT:
             console.log("Il rilevamento della posizione impiega troppo tempo");
-            document.getElementById("position").value = "Cerca posizione"
+            //document.getElementById("position").value = "Cerca posizione"
             position.style.color = '#989898';
             break;
         case error.UNKNOWN_ERROR:
             console.log("Si è verificato un errore sconosciuto");
-            document.getElementById("position").value = "Cerca posizione"
+            //document.getElementById("position").value = "Cerca posizione"
             position.style.color = '#989898';
             break;
     }
