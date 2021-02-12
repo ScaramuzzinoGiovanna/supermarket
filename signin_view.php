@@ -35,7 +35,9 @@
                                 <label for="nome">Nome</label>
                                 <div class="input-group mb-2">
                                     <div class="input-group-append">
-                                        <span class="input-group-text iconIll"><img src="images/person.svg"></img></span>
+                                        <span class="input-group-text borderColorPrimary 
+                                        
+                                        rounded-left"><img src="images/person.svg"></img></span>
                                      </div>
                                     <input type="text" name="name" required="" class="form-control accesso" id="nome" placeholder="">
                                 </div>
@@ -44,7 +46,7 @@
                                 <label for="cognome">Cognome</label>
                                 <div class="input-group mb-2">
                                     <div class="input-group-append">
-                                        <span class="input-group-text iconIll"><img src="images/person.svg"></img></span>
+                                        <span class="input-group-text borderColorPrimary rounded-left"><img src="images/person.svg"></img></span>
                                      </div>
                                     <input type="text" name="surname" required="" class="form-control accesso" id="cognome" placeholder="">
                                 </div>
@@ -54,7 +56,7 @@
                             <label class="col-form-label" for="città">Città</label>
                             <div class="input-group mb-2">
                                 <div class="input-group-append">
-                                    <span class="input-group-text iconIll"><img src="images/geo-alt.svg"></img></span>
+                                    <span class="input-group-text borderColorPrimary rounded-left"><img src="images/geo-alt.svg"></img></span>
                                 </div>
                                 <input type="text" name="city" required="" class="form-control accesso" id="città">
                                 <!--                                   placeholder="Inserisci cognome">-->
@@ -64,7 +66,7 @@
                             <label for="exampleInputEmail1">Indirizzo e-mail</label>
                             <div class="input-group mb-2">
                                 <div class="input-group-append">
-                                    <span class="input-group-text iconIll"><img src="images/envelope.svg"></img></span>
+                                    <span class="input-group-text borderColorPrimary rounded-left"><img src="images/envelope.svg"></img></span>
                                 </div>
                                 <input type="email" required="" name="email" class="form-control accesso" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="">
                             </div>
@@ -74,7 +76,7 @@
                             <span class="infoIcon"> <img class="pink-tooltip" data-toggle="tooltip-password" src="images/info.svg" alt="info password"> </span>
                             <div class="input-group mb-2">
                                 <div class="input-group-append">
-                                    <span class="input-group-text iconIll"><img src="images/key.svg"></img></span>
+                                    <span class="input-group-text borderColorPrimary rounded-left"><img src="images/key.svg"></img></span>
                                 </div>
                                 <input type="password" required="" name="password" class="form-control accesso" id="exampleInputPassword1">
                             </div>
@@ -85,7 +87,7 @@
                             <label for="exampleInputPassword2">Conferma password</label>
                             <div class="input-group mb-2">
                                 <div class="input-group-append">
-                                    <span class="input-group-text iconIll"><img src="images/key.svg"></img></span>
+                                    <span class="input-group-text borderColorPrimary rounded-left"><img src="images/key.svg"></img></span>
                                 </div>
                                 <input type="password" required="" name="confirm_password" class="form-control accesso" id="exampleInputPassword2">
                             </div>

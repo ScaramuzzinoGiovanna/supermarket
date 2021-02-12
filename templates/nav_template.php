@@ -7,7 +7,18 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="btn navbutton" href="#">Lista della spesa</a>
+            <!-- if not logged - lista -->
+            <?php
+            if (!isset($_SESSION["id"])) {
+
+            ?>
+             <?php
+            } else { ?>
+                <!-- if logged - lista -->
+                <a class="btn navbutton" href="shoppinglist_view.php">Lista della spesa</a>
+                <?php
+            }
+            ?>
             </li>
             <li class="nav-item">
                 <a class="btn navbutton" href="#">Contatti</a>
@@ -26,7 +37,7 @@
             </div>
         </form>
         <ul class="navbar-nav">
-            <!-- if not logged -->
+            <!-- if not logged - geolocation -->
             <?php
             if (!isset($_SESSION["id"])) {
             ?>
@@ -48,7 +59,7 @@
 
             <?php
             } else { ?>
-                <!-- if logged -->
+                <!-- if logged - geolocation -->
                 <li class="nav-item">
                     <div class="">
                         <!-- Button trigger modal -->

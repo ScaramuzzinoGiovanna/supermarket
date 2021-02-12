@@ -14,8 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
     <title>Accedi</title>
 </head>
-
-<body>
+<body> 
     <div class="container">
         <div class="d-flex justify-content-center h-100">
             <div class="card  border-primary mb-3 card-dim">
@@ -33,11 +32,10 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Indirizzo email</label>
                             <div class="input-group mb-2">
-                                <div class="input-group-append iconIll">
-                                    <span class="input-group-text iconIll"><img src="images/envelope.svg"></img></span>
+                                <div class="input-group-append ">
+                                    <span class="input-group-text borderColorPrimary rounded-left"><img src="images/envelope.svg"></img></span>
                                 </div>
                                 <input type="email" name="email" class="form-control accesso" id="exampleInputEmail1" required="TRUE" aria-describedby="emailHelp" placeholder="email@example.com">
-                            
                             </div>
                         </div>
                         <div class="form-group">
@@ -45,7 +43,7 @@
                             <!--                            <a href="#" >Password dimenticata? </a>-->
                             <div class="input-group mb-2">
                                 <div class="input-group-append">
-                                    <span class="input-group-text iconIll"><img src="images/key.svg"></img></span>
+                                    <span class="input-group-text borderColorPrimary rounded-left"><img src="images/key.svg"></img></span>
                                 </div>
                                 <?php if ($passwordErr == "") { ?>
                                     <input type="password" name="password" required="TRUE" class="form-control accesso " id="exampleInputPassword1" placeholder="">

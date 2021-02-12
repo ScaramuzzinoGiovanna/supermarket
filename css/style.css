@@ -164,7 +164,7 @@
     font-size: 12px;
 }
 
-.iconIll {  
+.borderColorPrimary {  
 
     border-color: #78c2ad;
 }
@@ -173,6 +173,10 @@
     color: black;
 }
 
+.pink-text{
+    font-weight: bold;
+    color: #f3969a;
+}
 /*.tooltip-inner {*/
 /*  background-color: #f3969a !important;*/
 /*  !*!important is not necessary if you place custom.css at the end of your css calls. For the purpose of this demo, it seems to be required in SO snippet*!*/
@@ -292,10 +296,9 @@ body {
     padding-left: 3rem ;
 }
 
-.table td img.prodImg{
+img.prodImg{
     width: 150px;
     height: 150px;
-
 }
 
 .containerPaddingMargin{

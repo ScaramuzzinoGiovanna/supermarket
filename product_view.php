@@ -4,7 +4,7 @@ include("utility/product.php");
 ?>
 <meta name="description" content="Supermarket products" />
 
-<title>Nome_prodotto</title>
+<title><?php echo $prodName ?></title>
 </head>
 <body>
 <?php include("templates/nav_template.php"); ?>
@@ -19,8 +19,21 @@ include("utility/product.php");
     <div class="card">
         <div class="jumbotron-fluid">
             <div class="wrapper row">
+                <!--product not found-->
+            <?php if($productError!="") { ?>
                 <div class="preview col-md-6">
-                    <img src="<?php echo $prodImg ?>" alt="pomodori">
+                <img class="prodImg" src="images/exclamation-triangle.svg">
+                </div>
+                <div class="details col-md-6">
+                    <div class="row align-items-center h-100">
+                    <h1 class="product-title"> <?php echo $productError ?></h1>
+                </div>
+            </div>
+            </div>
+            <?php } else{ ?>
+                <!--product found-->
+                <div class="preview col-md-6">
+                    <img class="prodImg" src="<?php echo $prodImg ?>">
                 </div>
                 <div class="details col-md-6">
                     <h1 class="product-title"><?php echo $prodName ?> </h1>
@@ -50,6 +63,7 @@ include("utility/product.php");
                 <?php } ?>
                 </tbody>
             </table>
+            <?php } ?>
         </div>
     </div>
 </div>

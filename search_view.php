@@ -17,13 +17,20 @@ include("search/search.php")
         </ol>
     </div>-->
     <div class="text-center">
-        <h5>Confronta i migliori prezzi per _parola inserita nel form_</h5>
+        <h5>Confronta i migliori prezzi per <h5 class= pink-text> "<?php echo $charSearch ?>" </h5> </h5>
     </div>
     <div class="container containerPaddingMargin">
         <div class="card">
             <div class="jumbotron-fluid">
                 <table class="table tableSearchProducts">
                     <tbody>
+                        <!--no product searched-->
+                    <?php if ($noResult==true) { ?>
+                        <tr>
+                            <th class="text-center"> Non è stato trovato alcun risultato</th>
+                    </tr>
+                    <?php } else {?> 
+                          <!--if product searched-->
                         <?php foreach ($arr as $prod) { ?>
                             <tr>
                                 <th scope="row">
@@ -33,7 +40,7 @@ include("search/search.php")
                                 </td>
                             </tr>
                         <?php } ?>
-
+                        <?php } ?>
                     </tbody>
 
                 </table>
