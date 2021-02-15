@@ -17,7 +17,7 @@ if($result = mysqli_query($con, $query)){
         while ($r = mysqli_fetch_assoc($result)) {
             $prodName = $r['productName'];
             $prodImg = $r['productImgpath'];
-            $arr[] = array( $r['enterpriseImgpath'],$r['supermarketAddress'], $r['supermarketCity'], $r['enterpriseName'], $r['productatmarketPrice'], $r['productatmarketId']);
+            $arr[] = array( $r['enterpriseImgpath'],$r['supermarketCity'],$r['supermarketAddress'],$r['enterpriseName'], $r['productatmarketPrice'], $r['productatmarketId']);
         }
     }elseif ($numRows  != 1){
         $productError = "C'è stato un problema nel trovare i dati del prodotto";
