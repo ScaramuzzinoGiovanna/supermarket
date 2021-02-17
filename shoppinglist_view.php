@@ -1,6 +1,6 @@
 <?php
-session_start();
 include("templates/head_template.php");
+include("utility/list.php");
 ?>
 
 <meta name="description" content="Supermarket products" />
@@ -8,8 +8,9 @@ include("templates/head_template.php");
 <title>Lista della spesa</title>
 </head>
 
-<body>
-    <?php include("templates/nav_template.php"); ?>
+<body>   
+ <?php include("templates/nav_template.php"); ?>
+
     <div class="container containerPaddingMargin">
         <h1 class="text-center">Lista della spesa</h1>
         <ul class="list-group">
@@ -24,23 +25,25 @@ include("templates/head_template.php");
                     </div>
                 </div>
             </li>
-            <li class="list-group-item">
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col">
-                            <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" id="customCheck2" type="checkbox" value="">
+            <fieldset>
+                <li class="list-group-item">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" id="customCheck2" type="checkbox" value="">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <img class="prodImgList" src="img/product/Branzino.png">
+                            </div>
+                            <div class="col">
+                                name_prod quantità_prod prezzo
                             </div>
                         </div>
-                        <div class="col">
-                            <img class="prodImgList" src="img/product/Branzino.png">
-                        </div>
-                        <div class="col">
-                            name_prod quantità_prod prezzo
-                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
+                </fieldset>
 
         </ul>
         <!-- <div class="card">

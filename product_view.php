@@ -17,8 +17,10 @@ include("templates/head_template.php");
     </ol>
 </div>-->
     <div class="container containerPaddingMargin">
+    <div class="d-flex justify-content-center h-100">
         <div class="card">
             <div class="jumbotron-fluid">
+            <div class="row">
                 <!--product not found-->
                 <?php if ($productError != "") { ?>
                     <div class="preview col-md-6">
@@ -30,55 +32,55 @@ include("templates/head_template.php");
                         </div>
                     </div>
                 <?php } else { ?>
-                <!--product found-->
-                <div class="preview col-md-6">
-                    <img class="prodImg" src="<?php echo $prodImg ?>">
-                </div>
-                <div class="details col-md-6">
-                    <h1 class="product-title"><?php echo $prodName ?> </h1>
-                </div>
+                    <!--product found-->
+                    <div class="preview col-4">
+                        <img class="prodImg" src="<?php echo $prodImg ?>">
+                    </div>
+                    <div class="details col-6">
+                        <h1 class="product-title"><?php echo $prodName ?> </h1>
+                    </div>
+                    </div>
             </div>
             <hr class="my-8">
             <table class="table table-responsive">
                 <thead>
                     <tr>
-                        <th scope="col">Supermercato</th>
-                        <th scope="col">Indirizzo</th>
-                        <th scope="col">Prezzo (€)</th>
-                        <th scope="col">Quantità</th>
-                        <th scope="col"></th>
+                        <th class="col-2">Supermercato</th>
+                        <th class="col-2">Indirizzo</th>
+                        <th class="col-2">Prezzo (€)</th>
+                        <th class="col-2">Quantità</th>
+                        <th class="col-2"></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($arr as $prod) { ?>
                         <tr class="table-default">
-                            <td scope="row"><img class='super-logo' src="<?php echo $prod[0] ?>"></td>
-                            <td scope="row"><?php echo $prod[1]?>, <?php echo $prod[2]?> </td>
-                            <td><?php echo $prod[4]?></td>
-                            
-                            <td> <div class="form-group">
-                                <form>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                </select>
-                                </form>
+                            <td class="col-2"><img class='super-logo' src="<?php echo $prod[0] ?>"></td>
+                            <td class="col-2"><?php echo $prod[1] ?>, <?php echo $prod[2] ?> </td>
+                            <td class="col-2"><?php echo $prod[4] ?></td>
+                            <td class="col-2">
+                                <div class="form-group">
+                                    <form>
+                                        <select class="form-control-xs" id="exampleFormControlSelect1">
+                                            <?php for ($i = 1; $i <= 100; $i++) { ?>
+                                                <option><?php echo $i ?> </option>
+                                            <?php } ?>
+                                        </select>
+                                    </form>
+                                </div>
                             </td>
-                            <td>
+                            <td class="col-2">
                                 <a class="btn btn-lg px-4 add" role="button" onclick="addToList()"> <img type="button" data-toggle="tooltip-lista" src="images/plus-circle.svg" height="30" alt="aggiungi alla lista"></a>
                             </td>
-  </div>
                         </tr>
                     <?php } ?>
                 </tbody>
             </table>
-            <?php } ?>
+        <?php } ?>
         </div>
+                                            </div>
     </div>
-<?php include("templates/script_template.php"); ?>
+    <?php include("templates/script_template.php"); ?>
 </body>
 
 </html>

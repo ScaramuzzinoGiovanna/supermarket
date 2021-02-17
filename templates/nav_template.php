@@ -6,11 +6,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
+            <li class="nav-item align-self-md-stretch">
                 <!-- if not logged - lista -->
                 <?php
                 if (!isset($_SESSION["id"])) { ?>
-                    <button class="btn navbutton" data-toggle="modal" data-target="#listaModal">Lista della spesa</button>
+                    <a class="btn navbutton xl-md-aligncenter-btn" data-toggle="modal" data-target="#listaModal">Lista della spesa</a>
                     <!-- Modal list -->
                     <div class="modal fade" id="listaModal" tabindex="-1" role="dialog" aria-labelledby="listamodal" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -42,13 +42,13 @@
                 <?php
                 } else { ?>
                     <!-- if logged - lista -->
-                    <a class="btn navbutton" href="shoppinglist_view.php">Lista della spesa</a>
+                    <a class="btn navbutton xl-md-aligncenter-btn" href="shoppinglist_view.php">Lista della spesa</a>
                 <?php
                 }
                 ?>
             </li>
-            <li class="nav-item">
-                <a class="btn navbutton" href="#">Contatti</a>
+            <li class="nav-item align-self-md-stretch">
+                <a class="btn navbutton xl-md-aligncenter-btn" href="#">Contatti</a>
             </li>
         </ul>
         <!-- form search -->
@@ -67,15 +67,12 @@
             <li class="nav-item">
                 <div class="">
                     <!-- Button geolocation trigger modal -->
-                    <button class="btn navbutton" data-toggle="modal" data-target="#geoModal">
-                        <img class="iconGPS" src="images/geo.png" alt="gps">
-                        <?php if(isset($_SESSION["id"])){?>
-                            <input class="navbutton buttonNoBorder" type="submit" id="position" value=" <?php echo $_SESSION['location'] ?> " readonly="readonly"/>
-                        <?php
-                        }else
-                        ?>
-                         <input class="navbutton buttonNoBorder" type="submit" id="position" value="" readonly="readonly"/>
-                    </button>
+                        <a data-toggle="tooltip" data-placement="bottom" title="Imposta località">
+                            <button class="btn navbutton" data-toggle="modal" data-target="#geoModal">
+                                <img class="iconGPS" src="images/geo.png" alt="gps">
+                                <input class="navbutton buttonNoBorder" type="submit" id="position" value="<?php if (isset($_SESSION['location'])){echo $_SESSION['location'];}else{echo '';}; ?>" readonly="readonly" />
+                            </button>
+                        </a>
                 </div>
             </li>
             <!-- Modal geolocation -->
@@ -102,7 +99,7 @@
                             </div>
                             <p>oppure</p>
                             <div class="">
-                                <button class="btn btn-secondary" data-dismiss="modal" onclick="geo()" data-toggle="tooltip-location">
+                                <button class="btn btn-secondary" data-dismiss="modal" onclick="geo()" data-toggle="tooltip-location2">
                                     <img class="iconGPS" src="images/geo.png" alt="gps">
                                     Geolocalizzati
                                 </button>
@@ -115,18 +112,18 @@
             <?php
             if (!isset($_SESSION["id"])) {
             ?>
-                <li class="nav-item">
+                <li class="nav-item xl-md-aligncenter-navItem">
                     <a class="btn navbutton" href="login_view.php">Accedi</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item xl-md-aligncenter-navItem">
                     <a class="btn navbutton" href="signin_view.php">Registrati</a>
                 </li>
 
             <?php
             } else { ?>
                 <!-- if logged -->
-                <li class="nav-item dropdown">
-                    <a class="dropdown-toggle btn navbutton" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Ciao, <?php echo $_SESSION["name"]; ?></a>
+                <li class="nav-item dropdown xl-md-aligncenter-navItem">
+                    <a class="dropdown-toggle btn navbutton " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Ciao, <?php echo $_SESSION["name"]; ?></a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="login/logout.php">Esci</a>
                     </div>

@@ -272,7 +272,7 @@ body {
 
 
 .table th, .table td{
-    padding-left: 3rem ;
+    padding-left: 1rem ;
 }
 
 img.prodImg{
@@ -299,4 +299,95 @@ img.prodImgList{
 
 .marginTop{
     margin-top: 1rem;
+}
+
+/* xs < 768 */
+@media screen and (max-width: 767px) {
+    h1{font-size: 1.4em;
+    text-align:center;}
+     html, body {
+        font-size: 1em;
+    }
+    th, td {
+        font-size: 0.8em;
+        padding-left: 0rem;
+    }
+
+    .btn.add img{
+        height:16px;
+    }
+
+    img.prodImg{
+        width: 100px;
+        height: 100px;}
+    .navbar-nav a, .navbar-nav input{
+        font-size: 1em !important;
+    }
+
+   
+}
+
+/* sm */
+@media screen and (min-width: 768px) {
+    h1{font-size: 1.6em;}
+    html, body {
+        font-size: 1em;
+    }
+    th, td {
+        font-size: 1em;
+        padding-left: 1.2rem;
+    }
+    img.prodImg{
+        width: 150px;
+        height: 150px;
+    }
+    .navbar-nav a, .navbar-nav input{
+        font-size: 1em !important;
+    }
+  
+}
+
+/* md */
+@media screen and (min-width: 992px) {
+    h1{font-size: 1.3em;}
+     html, body {
+        font-size: 1em;
+    }
+    .navbar-nav a, .navbar-nav input{
+        font-size: 1em !important;
+    }
+
+    th, td {
+        font-size: 1.2em;
+        padding-left: 1.4rem;
+    }
+    .xl-md-aligncenter-btn{
+        display:block ruby;
+    }
+    .xl-md-aligncenter-navItem{
+        align-self: center;
+    }   
+
+}
+
+/* lg */
+@media screen and (min-width: 1200px) {
+    h1{font-size: 1.4em;}
+
+    
+    th, td {
+        font-size: 1.2em;
+        padding-left: 1.4rem;
+    }
+    .navbar-nav a, .navbar-nav input{
+        font-size: 1em !important;
+    }
+    .xl-md-aligncenter-btn{
+        display:block ruby;
+    }
+    .xl-md-aligncenter-navItem{
+        align-self: center;
+    }
+  
+    
 }
