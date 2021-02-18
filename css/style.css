@@ -391,3 +391,7 @@ img.prodImgList{
   
     
 }
+
+  .fixedButton{
+    max-width: 200px; 
+  }

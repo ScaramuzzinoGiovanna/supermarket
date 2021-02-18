@@ -18,7 +18,7 @@ if (isset($_SESSION['id'])) {
             while ($r = mysqli_fetch_assoc($result)) {
                 $arr[] = array($r['productName'],$r['productPrice'],$r['supermarketAddress'],$r['supermarketCity'],$r['enterpriseName'],$r['listQuantity'], $r['listId']);
             }
-
+            
         $lastAddress = "";
         $lastCity = "";
         $lastEnterprise = "";
@@ -41,3 +41,4 @@ if (isset($_SESSION['id'])) {
     }
 }
 // echo json_encode($arr);
+

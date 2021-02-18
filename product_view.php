@@ -81,6 +81,8 @@ include("templates/head_template.php");
                                             </div>
     </div>
     <?php include("templates/script_template.php"); ?>
+    <script type="text/javascript" src="js/addToList.js"></script>
+
 </body>
 
 </html>

@@ -70,7 +70,7 @@
                         <a data-toggle="tooltip" data-placement="bottom" title="Imposta località">
                             <button class="btn navbutton" data-toggle="modal" data-target="#geoModal">
                                 <img class="iconGPS" src="images/geo.png" alt="gps">
-                                <input class="navbutton buttonNoBorder" type="submit" id="position" value="<?php if (isset($_SESSION['location'])){echo $_SESSION['location'];}else{echo '';}; ?>" readonly="readonly" />
+                                <input class="navbutton buttonNoBorder text-capitalize" type="submit" id="position" value="<?php if (isset($_SESSION['location'])){echo $_SESSION['location'];}else{echo '';}; ?>" readonly="readonly" />
                             </button>
                         </a>
                 </div>
@@ -123,7 +123,7 @@
             } else { ?>
                 <!-- if logged -->
                 <li class="nav-item dropdown xl-md-aligncenter-navItem">
-                    <a class="dropdown-toggle btn navbutton " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Ciao, <?php echo $_SESSION["name"]; ?></a>
+                    <a class="dropdown-toggle btn navbutton fixedButton d-inline-block text-truncate " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Ciao, <?php  echo $_SESSION["name"];  ?>  </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="login/logout.php">Esci</a>
                     </div>
