@@ -41,7 +41,7 @@ if ($result = mysqli_query($con, $query)) {
             $arr[] = array($r['enterpriseImgpath'], $r['supermarketAddress'], $r['supermarketCity'], $r['enterpriseName'], $r['productatmarketPrice'], $r['productatmarketId']);
         }
     } elseif ($numRows  != 1) {
-        $productError = "Il prodotto non [ presente nella tua città";
+        $productError = "Il prodotto non è presente nella tua città";
     }
 }
 }
