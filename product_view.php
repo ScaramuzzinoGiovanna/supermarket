@@ -70,7 +70,7 @@ include("templates/head_template.php");
                                 </div>
                             </td>
                             <td class="col-2">
-                                <a class="btn btn-lg px-4 add" role="button" onclick="addToList()"> <img type="button" data-toggle="tooltip-lista" src="images/plus-circle.svg" height="30" alt="aggiungi alla lista"></a>
+                                <a class="btn btn-lg px-4 add" role="button" onclick="addToList(<?php echo $prod[5] ?>)"> <img type="button" data-toggle="tooltip-lista" src="images/plus-circle.svg" height="30" alt="aggiungi alla lista"></a>
                             </td>
                         </tr>
                     <?php } ?>
