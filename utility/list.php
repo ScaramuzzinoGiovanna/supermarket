@@ -8,7 +8,7 @@ $list = "";
 if (isset($_SESSION['id'])) {
     require "utility/db.php";
     //require "db.php";
-    $query = "SELECT list.id AS listId, product.name AS productName, productatMarket.price AS productPrice, supermarket.address AS supermarketAddress, supermarket.city AS supermarketCity, enterprise.name AS enterpriseName, list.quantity as listQuantity
+    $query = "SELECT list.id AS listId, product.name AS productName, product.imgpath AS productImgpath, productatMarket.price AS productPrice, supermarket.address AS supermarketAddress, supermarket.city AS supermarketCity, enterprise.name AS enterpriseName, list.quantity as listQuantity
             FROM ((((list JOIN productatMarket ON list.productAtMarket=productatMarket.id) JOIN product ON product.id=productatMarket.product) JOIN supermarket ON supermarket.id=productatMarket.supermarket) JOIN enterprise ON supermarket.enterprise=enterprise.id)
             WHERE list.user=" . $_SESSION['id']. "
             ORDER BY `enterpriseName` ASC, `supermarketCity` ASC, `supermarketAddress` ASC";
@@ -16,7 +16,7 @@ if (isset($_SESSION['id'])) {
         $numRows = mysqli_num_rows($result);
         if ($numRows  = 1) {
             while ($r = mysqli_fetch_assoc($result)) {
-                $arr[] = array($r['productName'],$r['productPrice'],$r['supermarketAddress'],$r['supermarketCity'],$r['enterpriseName'],$r['listQuantity'], $r['listId']);
+                $arr[] = array($r['productName'], $r['productImgpath'], $r['productPrice'], $r['supermarketAddress'], $r['supermarketCity'], $r['enterpriseName'], $r['listQuantity'], $r['listId']);
             }
             
         $lastAddress = "";

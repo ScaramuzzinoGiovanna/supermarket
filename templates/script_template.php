@@ -3,6 +3,8 @@
 <script type="text/javascript" src="js/liveSearch.js" charset="UTF-8"></script>
 <script type="text/javascript" src="js/geolocation.js"></script>
 <script type="text/javascript" src="js/tooltip.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/manageList.js"></script>
+
 
 <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
         integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
