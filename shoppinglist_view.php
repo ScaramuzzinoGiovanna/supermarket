@@ -47,14 +47,14 @@ include("utility/list.php");
                                         <div class="col-sm-1 col-md-1 col-xl-2">
                                             <img class="prodImgList" src=<?php echo $item['productImgpath'] ?>>
                                         </div>
-                                        <div class=" col-xs-3 col-sm-3 col-md-2 col-xl-2">
+                                        <div class=" col-xs-3 col-sm-3 col-md-2 col-xl-2 ">
                                            <p class="font-weight-bold"> <?php echo $item['productName'] ?> </P>
                                         </div>
-                                        <div class="col-sm-1">
+                                        <div class="col-sm-1 offset-sm-2">
                                         <span class="badge badge-primary badge-pill">Q.tà: <?php echo $item['productQuantity'] ?></span>
                                            
                                         </div>
-                                        <div class="col-sm-1 col-md-2 col-xl-2 text-xl-right">
+                                        <div class="col-sm-1 col-md-2 col-xl-2 offset-sm-2 text-xl-right">
                                             <p> € <?php echo $item['productPrice'] ?>/pz</p>
                                         </div>
                                     </div>
