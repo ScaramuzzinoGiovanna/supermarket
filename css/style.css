@@ -156,37 +156,14 @@
     font-weight: bold;
     color: #f3969a;
 }
-/*.tooltip-inner {*/
-/*  background-color: #f3969a !important;*/
-/*  !*!important is not necessary if you place custom.css at the end of your css calls. For the purpose of this demo, it seems to be required in SO snippet*!*/
-/*  color: #fff;*/
-/*}*/
-
-/*.tooltip.top .tooltip-arrow {*/
-/*  border-top-color: #f3969a;*/
-/*}*/
-
-/*.tooltip.right .tooltip-arrow {*/
-/*  border-right-color: #f3969a;*/
-/*}*/
-
-/*.tooltip.bottom .tooltip-arrow {*/
-/*  border-bottom-color: #f3969a;*/
-/*}*/
-
-/*.tooltip.left .tooltip-arrow {*/
-/*  border-left-color: #f3969a;*/
-/*}*/
-
-/*input{*/
-/*  border:none;*/
-/*  background-color: transparent;*/
-/*}*/
 
 .super-logo {
     height: 32px;
 }
 
+.btn.trashButton:hover{
+    box-shadow: 0 0 0 0.2rem rgba(140, 203, 185, 0.5);
+}
 .btn.add:hover {
     background-color: #f3969a;
 }
