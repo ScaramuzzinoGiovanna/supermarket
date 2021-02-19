@@ -14,7 +14,7 @@ include("utility/list.php");
     <div class="container containerPaddingMargin">
         <h1 class="text-center pb-3">Lista della spesa</h1>
         <div class="d-flex justify-content-end">
-        <a class="btn btn px-2 pb-4 " role="button" onclick=""> 
+        <a class="btn btn px-2 pb-4 " role="button" onclick=removeFromList()> 
             <img class="trashSVG" type="button" data-toggle="tooltip" data-placement="left" title="Elimina prodotti selezionati dalla lista" src="images/trash.svg" height="30" alt="Elimina dalla lista">
         </a>
         </div>
@@ -42,7 +42,7 @@ include("utility/list.php");
                                     <div class="row inline-block">
                                         <div class="col-xs-1 col-sm-1 col-md-1 col-xl-1">
                                             <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" id="<?php echo $item['listId'] ?>" type="checkbox" value="">
+                                                <input class="custom-control-input chkbox" id="<?php echo $item['listId']?>" type="checkbox" value="<?php echo $item['listId'] ?>">
                                                 <label class="custom-control-label" for="<?php echo $item['listId'] ?>"></label>
                                             </div>
                                         </div>
@@ -73,6 +73,7 @@ include("utility/list.php");
     </div>
 
     <?php include("templates/script_template.php"); ?>
+    <script type="text/javascript" src="js/manageList.js"></script>
 
 
 </body>
