@@ -14,7 +14,9 @@ include("utility/list.php");
     <div class="container containerPaddingMargin">
         <h1 class="text-center pb-3">Lista della spesa</h1>
         <div class="d-flex justify-content-end">
-        <a class="btn btn px-2 pb-4 trashButton " role="button" onclick=""> <img type="button" data-toggle="tooltip" data-placement="left" title="Elimina prodotti selezionati dalla lista" src="images/trash.svg" height="30" alt="Elimina dalla lista"></a>
+        <a class="btn btn px-2 pb-4 " role="button" onclick=""> 
+            <img class="trashSVG" type="button" data-toggle="tooltip" data-placement="left" title="Elimina prodotti selezionati dalla lista" src="images/trash.svg" height="30" alt="Elimina dalla lista">
+        </a>
         </div>
         <ul class="list-group">
            <?php foreach($array_list_super as $via => $sub1){
