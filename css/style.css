@@ -161,14 +161,6 @@
     height: 32px;
 }
 
-.btn.trashButton:hover{
-    box-shadow: 0 0 0 0.2rem rgba(140, 203, 185, 0.5);
-}
-
-.btn.add:hover {
-    box-shadow:0 0 0 0.2rem rgba(245, 166, 169, 0.5);
-}
-
 .breadcrumb {
     background-color: whitesmoke;
 }
@@ -358,9 +350,7 @@ img.prodImgList{
     }
     .xl-md-aligncenter-navItem{
         align-self: center;
-    }
-  
-    
+    }  
 }
 
   .fixedButton{
@@ -368,18 +358,23 @@ img.prodImgList{
   }
 
   .geoAlert{
+    transition: box-shadow .3s;
     display:block;
     position: absolute;
-    border: 1px solid #d4d4d4;
+    border: 1px solid #ccc; 
+    border-radius:10px;   
     border-bottom: none;
     border-top: none;
     z-index:  2147483647;
     top: 100%;
     left: 0;
     right: 0;
-    width:200%;
+    width:300%;
   }
 
-.trashSVG:hover{
-filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);  }
+.geoAlert:hover{
+    box-shadow: 0 0 11px rgba(117, 10, 10, 0.2); 
+}
+.add:hover, .trashSVG:hover{
+filter: invert(1004) sepia(80) saturate(109) hue-rotate(1007deg);}
 

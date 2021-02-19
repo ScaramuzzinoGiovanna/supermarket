@@ -77,7 +77,8 @@
                                                                                                                         }; ?>" readonly="readonly" />
                         </button>
                     </a>
-                    <div class="toast show geoAlert" role="alert" aria-live="assertive" aria-atomic="true">
+                    <?php if (!isset($_SESSION["location"]) ) { ?>
+                    <div class="toast show geoAlert" data-autohide="false" role="alert" aria-live="assertive" aria-atomic="true"> 
                         <div class="toast-header">
                             <img src="images/geo-alt.svg" class="p-1">
                             <strong class="mr-auto">Localizzati</strong>
@@ -85,10 +86,14 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
+                        <a data-toggle="modal" data-target="#geoModal">
                         <div class="toast-body">
-                            <small> per scoprire i prodotti più convenienti nella tua zona</small>
+                            <small> Per scoprire i prodotti più convenienti nella tua zona</small>
                         </div>
+                        </a>
                     </div>
+                    <? } ?>
+                   
             </li>
             <!-- Modal geolocation -->
             <div class="modal fade" id="geoModal" tabindex="-1" role="dialog" aria-labelledby="geoModal" aria-hidden="true">

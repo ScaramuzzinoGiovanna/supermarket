@@ -10,6 +10,8 @@ function loadGeo() {
     xmlhttp.send();
     document.getElementById("position").value = location;
     document.getElementById("loc").value = ""
+    $('.geoAlert').toast('hide');
+
 }
 
 
@@ -34,7 +36,7 @@ function displayLocation(latitude, longitude) {
     $.when(result).done(function (r) {
         result = r;
         document.getElementById("position").value = result
-        // alert(result)
+        $('.geoAlert').toast('hide');
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", "utility/location.php?loc=" + result, true);
         xmlhttp.send();
@@ -84,3 +86,5 @@ function error_callback(error) {
             break;
     }
 }
+//geo-alert active
+$('.geoAlert').toast('show');
