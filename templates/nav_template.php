@@ -65,15 +65,30 @@
         </form>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <div class="">
+                <div class="btn-group">
                     <!-- Button geolocation trigger modal -->
-                        <a data-toggle="tooltip" data-placement="bottom" title="Imposta località">
-                            <button class="btn navbutton" data-toggle="modal" data-target="#geoModal">
-                                <img class="iconGPS" src="images/geo.png" alt="gps">
-                                <input class="navbutton buttonNoBorder text-capitalize" type="submit" id="position" value="<?php if (isset($_SESSION['location'])){echo $_SESSION['location'];}else{echo '';}; ?>" readonly="readonly" />
+                    <a data-toggle="tooltip" data-placement="bottom" title="Imposta località">
+                        <button class="btn navbutton" data-toggle="modal" data-target="#geoModal">
+                            <img class="iconGPS" src="images/geo.png" alt="gps">
+                            <input class="navbutton buttonNoBorder text-capitalize" type="submit" id="position" value="<?php if (isset($_SESSION['location'])) {
+                                                                                                                            echo $_SESSION['location'];
+                                                                                                                        } else {
+                                                                                                                            echo '';
+                                                                                                                        }; ?>" readonly="readonly" />
+                        </button>
+                    </a>
+                    <div class="toast show geoAlert" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <img src="images/geo-alt.svg" class="p-1">
+                            <strong class="mr-auto">Localizzati</strong>
+                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
                             </button>
-                        </a>
-                </div>
+                        </div>
+                        <div class="toast-body">
+                            <small> per scoprire i prodotti più convenienti nella tua zona</small>
+                        </div>
+                    </div>
             </li>
             <!-- Modal geolocation -->
             <div class="modal fade" id="geoModal" tabindex="-1" role="dialog" aria-labelledby="geoModal" aria-hidden="true">
@@ -123,7 +138,7 @@
             } else { ?>
                 <!-- if logged -->
                 <li class="nav-item dropdown xl-md-aligncenter-navItem">
-                    <a class="dropdown-toggle btn navbutton fixedButton d-inline-block text-truncate " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Ciao, <?php  echo $_SESSION["name"];  ?>  </a>
+                    <a class="dropdown-toggle btn navbutton fixedButton d-inline-block text-truncate " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Ciao, <?php echo $_SESSION["name"];  ?> </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="login/logout.php">Esci</a>
                     </div>

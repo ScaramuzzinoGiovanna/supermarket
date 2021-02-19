@@ -164,8 +164,9 @@
 .btn.trashButton:hover{
     box-shadow: 0 0 0 0.2rem rgba(140, 203, 185, 0.5);
 }
+
 .btn.add:hover {
-    background-color: #f3969a;
+    box-shadow:0 0 0 0.2rem rgba(245, 166, 169, 0.5);
 }
 
 .breadcrumb {
@@ -209,13 +210,6 @@ body {
   font: 16px Arial;
 }
 
-.autocomplete {
-    /*the container must be positioned relative:*/
-    position: relative;
-    display: inline-block;
-    color: black;
-    z-index: 9999;
-  }
   .autocomplete-items {
     position: absolute;
     border: 1px solid #d4d4d4;
@@ -372,3 +366,17 @@ img.prodImgList{
   .fixedButton{
     max-width: 200px; 
   }
+
+  .geoAlert{
+    display:block;
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index:  2147483647;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width:200%;
+  }
+
