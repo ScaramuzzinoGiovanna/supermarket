@@ -78,22 +78,22 @@
                         </button>
                     </a>
                     <?php if (!isset($_SESSION["location"]) ) { ?>
-                    <div class="toast show geoAlert" data-autohide="false" role="alert" aria-live="assertive" aria-atomic="true"> 
-                        <div class="toast-header">
-                            <img src="images/geo-alt.svg" class="p-1">
-                            <strong class="mr-auto">Localizzati</strong>
-                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                        <div class="toast show geoAlert" data-autohide="false" role="alert" aria-live="assertive" aria-atomic="true"> 
+                            <div class="toast-header">
+                                <img src="images/geo-alt.svg" class="p-1">
+                                <strong class="mr-auto">Localizzati</strong>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <a data-toggle="modal" data-target="#geoModal">
+                                <div class="toast-body">
+                                    <small> Per scoprire i prodotti più convenienti nella tua zona</small>
+                                </div>
+                            </a>
                         </div>
-                        <a data-toggle="modal" data-target="#geoModal">
-                        <div class="toast-body">
-                            <small> Per scoprire i prodotti più convenienti nella tua zona</small>
-                        </div>
-                        </a>
-                    </div>
-                    <? } ?>
-                   
+                    <?php } ?>
+                </div>
             </li>
             <!-- Modal geolocation -->
             <div class="modal fade" id="geoModal" tabindex="-1" role="dialog" aria-labelledby="geoModal" aria-hidden="true">
@@ -143,7 +143,7 @@
             } else { ?>
                 <!-- if logged -->
                 <li class="nav-item dropdown xl-md-aligncenter-navItem">
-                    <a class="dropdown-toggle btn navbutton fixedButton d-inline-block text-truncate " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Ciao, <?php echo $_SESSION["name"];  ?> </a>
+                    <a class="dropdown-toggle btn navbutton fixedButton d-inline-block text-truncate " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Ciao, <?php echo $_SESSION["name"]; ?> </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="login/logout.php">Esci</a>
                     </div>
@@ -154,5 +154,4 @@
 
         </ul>
     </div>
-
 </nav>
