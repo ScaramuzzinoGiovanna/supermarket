@@ -1,3 +1,10 @@
+document.getElementById("loc").addEventListener("keydown", function(e) {
+    console.log(e.code);
+    if (e.code == 'Enter') {
+        document.getElementById("loadGeoButton").click();
+    }
+});
+
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }

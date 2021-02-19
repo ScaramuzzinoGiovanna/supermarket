@@ -112,7 +112,7 @@
                             <div class="input-group mb-2">
                                 <input class="form-control py-2 pinkInput" type="text" id="loc" name='loc' autocomplete="off" placeholder="Inserisci la tua località">
                                 <span class="input-group-append">
-                                    <button class="btn btn-secondary border-left-0 border" data-dismiss="modal" type="button" onclick="loadGeo()">
+                                    <button class="btn btn-secondary border-left-0 border" id="loadGeoButton" data-dismiss="modal" type="button" onclick="loadGeo()">
                                         Invio
                                     </button>
                                 </span>
