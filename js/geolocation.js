@@ -16,18 +16,22 @@ function loadGeo() {
     xmlhttp.open("GET", "utility/location.php?loc=" + location, true);
     xmlhttp.send();
     document.getElementById("position").value = location;
-    document.getElementById("loc").value = ""
+    document.getElementById("loc").value = "";
+    if(!(location=== "")){
+        $('#geoModal').modal('hide');
+        window.location.reload();
+    }
     $('.geoAlert').toast('hide');
-
 }
 
 
 function geo() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, error_callback, { enableHighAccuracy: false });
-    } else {
+    } else {    
         alert('No geolocalization')
     }
+
 }
 
 function showPosition(pos) {
@@ -48,6 +52,7 @@ function displayLocation(latitude, longitude) {
         xmlhttp.open("GET", "utility/location.php?loc=" + result, true);
         xmlhttp.send();
     })
+    window.location.reload();
 }
 
 function convertToAddress(geopos) {

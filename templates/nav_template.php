@@ -77,6 +77,7 @@
                                                                                                                         }; ?>" readonly="readonly" />
                         </button>
                     </a>
+                    <!--geo alert -->
                     <?php if (!isset($_SESSION["location"]) ) { ?>
                         <div class="toast show geoAlert" data-autohide="false" role="alert" aria-live="assertive" aria-atomic="true"> 
                             <div class="toast-header">
@@ -96,7 +97,7 @@
                 </div>
             </li>
             <!-- Modal geolocation -->
-            <div class="modal fade" id="geoModal" tabindex="-1" role="dialog" aria-labelledby="geoModal" aria-hidden="true">
+            <div class="modal fade" id="geoModal" tabindex="-1" role="dialog" aria-labelledby="geoModal" aria-hidden="true" >
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header w-100 text-center">
@@ -110,9 +111,9 @@
                         </div>
                         <div class="modal-body w-100 text-center bodyModalLocation">
                             <div class="input-group mb-2">
-                                <input class="form-control py-2 pinkInput" type="text" id="loc" name='loc' autocomplete="off" placeholder="Inserisci la tua località">
+                                <input class="form-control py-2 pinkInput" type="text" id="loc" name='loc' autocomplete="off" required="" placeholder="Inserisci la tua località">
                                 <span class="input-group-append">
-                                    <button class="btn btn-secondary border-left-0 border" id="loadGeoButton" data-dismiss="modal" type="button" onclick="loadGeo()">
+                                    <button class="btn btn-secondary border-left-0 border" id="loadGeoButton" type="button" onclick="loadGeo()">
                                         Invio
                                     </button>
                                 </span>
