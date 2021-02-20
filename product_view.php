@@ -71,6 +71,11 @@ include("templates/head_template.php");
                             </td>
                             <td class="col-2">
                                 <a class="btn btn-lg px-4 add" role="button" onclick="addToList(<?php echo $prod[5] ?>)"> <img type="button" data-toggle="tooltip-lista" src="images/plus-circle.svg" height="30" alt="aggiungi alla lista"></a>
+                                <div class="alert alert-dismissible alert-warning" role="alert" id="alert" hidden="true">
+                                    <button type="button" class="close"  data-dismiss="alert" >&times;</button>
+                                    <h4 class="alert-heading">Warning!</h4>
+                                    <p class="mb-0">Best check yo self,  <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
+                                </div>
                             </td>
                         </tr>
                     <?php } ?>

@@ -4,7 +4,7 @@ function addToList(idProductAtMarket){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", "utility/add-to-list.php?productMarketId=" + idProductAtMarket + "&quantity=" + quantity, true);
     xmlhttp.send();
-
+    $('#alert').show('medium');
 }
 
 
