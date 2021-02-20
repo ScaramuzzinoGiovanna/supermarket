@@ -61,7 +61,7 @@ include("templates/head_template.php");
                             <td class="col-2">
                                 <div class="form-group">
                                     <form>
-                                        <select class="form-control-xs" id="exampleFormControlSelect1">
+                                        <select class="form-control-xs" id="quantityId<?php echo $prod[5] ?>">
                                             <?php for ($i = 1; $i <= 100; $i++) { ?>
                                                 <option><?php echo $i ?> </option>
                                             <?php } ?>

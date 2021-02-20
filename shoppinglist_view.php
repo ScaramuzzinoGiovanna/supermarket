@@ -30,8 +30,8 @@ include("utility/list.php");
                                     <p> <?php echo $via ?> &nbsp <?php echo $city ?> </p>
                                 </div>
                                 <div class="col-auto ">
-                                    <p class="text-xl-right">Totale: </p>
-                                    <p class="text-xl-right">_totale_</p>
+                                    <p class="text-xl-right">Totale spesa: </p>
+                                    <p class="text-xl-right">€ <?php echo $supermarketPrice[$via][$city][$entName] ?></p>
                                 </div>
                             </div>
                         </li>
@@ -50,7 +50,7 @@ include("utility/list.php");
                                             <img class="prodImgList" src=<?php echo $item['productImgpath'] ?>>
                                         </div>
                                         <div class=" col-xs-3 col-sm-3 col-md-2 col-xl-2 ">
-                                           <a href="product_view.php?product=<?php echo str_replace(' ', '_', $item['productName'])?>"><p class="font-weight-bold"> <?php echo $item['productName'] ?> </P></a>
+                                        <a href="product_view.php?product=<?php echo str_replace(' ', '_', $item['productName'])?>"><p class="font-weight-bold"> <?php echo $item['productName'] ?> </P></a>
                                         </div>
                                         <div class="col-sm-1 offset-sm-2">
                                         <span class="badge badge-primary badge-pill">Q.tà: <?php echo $item['productQuantity'] ?></span>

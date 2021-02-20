@@ -1,48 +1,39 @@
 <?php
-$insertMessage = "";
 session_start();
-$arr = [];
-$list = "";
+$insertMessage = "";
+$array_list_super = [];
+$supermarketPrice = [];
 
 
 if (isset($_SESSION['id'])) {
     require "utility/db.php";
-    //require "db.php";
     $query = "SELECT list.id AS listId, product.name AS productName, product.imgpath AS productImgpath, productatMarket.price AS productPrice, supermarket.address AS supermarketAddress, supermarket.city AS supermarketCity, enterprise.name AS enterpriseName, list.quantity as listQuantity
             FROM ((((list JOIN productatMarket ON list.productAtMarket=productatMarket.id) JOIN product ON product.id=productatMarket.product) JOIN supermarket ON supermarket.id=productatMarket.supermarket) JOIN enterprise ON supermarket.enterprise=enterprise.id)
             WHERE list.user=" . $_SESSION['id'] . "
             ORDER BY `enterpriseName` ASC, `supermarketCity` ASC, `supermarketAddress` ASC";
     if ($result = mysqli_query($con, $query)) {
         $numRows = mysqli_num_rows($result);
-        $array_list_super = [];
         if ($numRows  = 1) {
             while ($r = mysqli_fetch_assoc($result)) {
-                //$arr[] = array("productName" => $r['productName'], 'productPrice' => $r['productPrice'], 'supermarketAddress' => $r['supermarketAddress'], 'supermarketCity' => $r['supermarketCity'], 'enterpriseName' => $r['enterpriseName'], 'productQuantity' => $r['listQuantity'], 'listId' => $r['listId'], 'productImgpath'=> $r['productImgpath']);
-                $addr = $r['supermarketAddress'] ;
-                $city = $r['supermarketCity'] ;
+                $addr = $r['supermarketAddress'];
+                $city = $r['supermarketCity'];
                 $entName = $r['enterpriseName'];
-                $array_list_super[$addr][$city][$entName][]=array("productName" => $r['productName'], 'productPrice' => $r['productPrice'], 'supermarketAddress' => $r['supermarketAddress'], 'supermarketCity' => $r['supermarketCity'], 'enterpriseName' => $r['enterpriseName'], 'productQuantity' => $r['listQuantity'], 'listId' => $r['listId'], 'productImgpath'=> $r['productImgpath']);
+                $array_list_super[$addr][$city][$entName][] = array("productName" => $r['productName'], 'productPrice' => $r['productPrice'], 'supermarketAddress' => $r['supermarketAddress'], 'supermarketCity' => $r['supermarketCity'], 'enterpriseName' => $r['enterpriseName'], 'productQuantity' => $r['listQuantity'], 'listId' => $r['listId'], 'productImgpath' => $r['productImgpath']);
             }
-            /*$lastAddress = "";
-        $lastCity = "";
-        $lastEnterprise = "";
-        foreach($arr as $e){
-            if ($e[2] == $lastAddress && $e[3] == $lastCity && $e[4] == $lastEnterprise){
-                 $list .= "mettere codice html per continuare con una nuova riga una tabella già iniziata";
-            }elseif($lastAddress == "" && $lastCity == "" && $lastEnterprise == ""){
-                $list .= "mettere codice html per iniziare la prima tabella";
-            }else{
-                $list .= "mettere codice html per chiudere la tabella precedente, spazio e aprire una tabella nuova per un altro supermercato";
+
+            foreach($array_list_super as $via => $sub1){
+                foreach($sub1 as $city => $sub2){
+                    foreach($sub2 as $entName => $sub3 ){
+                        $sum = 0;
+                        foreach($sub3 as $item){
+                            $sum += $item['productPrice']*$item['productQuantity'];
+                            $supermarketPrice[$via][$city][$entName] = $sum;
+                        }
+                    }
+                }
             }
-            $lastAddress = $e[2];
-            $lastCity = $e[3];
-            $lastEnterprise = $e[4];
-        }
-        $list .= "chiudere ultima tabella";
-        }*/
         } else {
-            $listMessage = "Errore durante la lettura nella lista. Riprovare";
+            $listMessage = "Errore durante la lettura della lista. Riprovare";
         }
     }
 }
-

@@ -31,7 +31,9 @@ $location = $_SESSION['location'];
 
 $query = "SELECT product.name AS productName, product.imgpath AS productImgpath, productatMarket.id AS productatmarketId, productatMarket.price AS productatmarketPrice, supermarket.address AS supermarketAddress, supermarket.city AS supermarketCity, enterprise.name AS enterpriseName, enterprise.imgpath AS enterpriseImgpath 
     FROM (((product JOIN productatMarket ON product.id=productatMarket.product) JOIN supermarket ON supermarket.id=productatMarket.supermarket) JOIN enterprise ON enterprise.id=supermarket.enterprise) 
-    WHERE product.name='" . $product . "' AND supermarket.city='" . $location . "'";
+    WHERE product.name='" . $product . "' AND supermarket.city='" . $location . "' 
+    ORDER BY `productatmarketPrice` ASC";
+
 
 
 if ($result = mysqli_query($con, $query)) {
