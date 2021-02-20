@@ -47,13 +47,11 @@ function displayLocation(latitude, longitude) {
         result = r;
         document.getElementById("position").value = result
         $('.geoAlert').toast('hide');
-        console.log(result);
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", "utility/location.php?loc=" + result, true);
         xmlhttp.send();
         window.location.reload();
     })
-
 }
 
 function convertToAddress(geopos) {
