@@ -13,12 +13,17 @@ include("utility/list.php");
 
     <div class="container containerPaddingMargin">
         <h1 class="text-center pb-3">Lista della spesa</h1>
-        <div class="d-flex justify-content-end">
-        <a class="btn btn px-2 pb-4 " role="button" onclick=removeFromList()> 
-            <img class="trashSVG" type="button" data-toggle="tooltip" data-placement="left" title="Elimina prodotti selezionati dalla lista" src="images/trash.svg" height="30" alt="Elimina dalla lista">
-        </a>
-        </div>
-        <ul class="list-group">
+        <?php if (empty($array_list_super)){?>
+            <p class="text-center"> Non hai ancora inserito alcun elemento in lista </p>
+            <p class="text-center"> Aggiungi i prodotti più convenienti tramite il simbolo <img src="images/plus-circle.svg"> </p>
+        <?php }else{ ?>
+            <div class="d-flex justify-content-end">
+            <a class="btn btn px-2 pb-4 " role="button" onclick=removeFromList()> 
+                <img class="trashSVG" type="button" data-toggle="tooltip" data-placement="left" title="Elimina prodotti selezionati dalla lista" src="images/trash.svg" height="30" alt="Elimina dalla lista">
+            </a>
+            </div> 
+            <ul class="list-group">
+       
            <?php foreach($array_list_super as $via => $sub1){
                     foreach($sub1 as $city => $sub2){
                         foreach($sub2 as $entName => $sub3 ){   ?>
@@ -68,7 +73,7 @@ include("utility/list.php");
             <?php }?>
             <?php }?>
         </ul>
-
+    <?php } ?>   
 
     </div>
 

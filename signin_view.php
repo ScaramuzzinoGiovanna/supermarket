@@ -54,12 +54,12 @@
                         </div>
                         <div class="form-group">
                             <label class="col-form-label" for="città">Città</label>
+                            <span class="infoIcon"> <img data-toggle="tooltip-city" src="images/info.svg" alt="info città"> </span>
                             <div class="input-group mb-2">
                                 <div class="input-group-append">
                                     <span class="input-group-text borderColorPrimary rounded-left"><img src="images/geo-alt.svg"></img></span>
                                 </div>
                                 <input type="text" name="city" required="" class="form-control accesso" id="città">
-                                <!--                                   placeholder="Inserisci cognome">-->
                             </div>
                         </div>
                         <div class=" form-group">
@@ -73,7 +73,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <span class="infoIcon"> <img class="pink-tooltip" data-toggle="tooltip-password" src="images/info.svg" alt="info password"> </span>
+                            <span class="infoIcon"> <img data-toggle="tooltip-password" src="images/info.svg" alt="info password"> </span>
                             <div class="input-group mb-2">
                                 <div class="input-group-append">
                                     <span class="input-group-text borderColorPrimary rounded-left"><img src="images/key.svg"></img></span>
@@ -94,7 +94,6 @@
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary btn-sm login_btn" value="Registrati"></input>
-                            <!--                        <input type="submit" value="Login" class="btn float-right login_btn">-->
                         </div>
 
                     </form>

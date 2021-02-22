@@ -158,7 +158,7 @@
 }
 
 .super-logo {
-    height: 32px;
+    width: 50%;
 }
 
 .breadcrumb {
@@ -377,4 +377,3 @@ img.prodImgList{
 }
 .add:hover, .trashSVG:hover{
 filter: invert(1004) sepia(80) saturate(109) hue-rotate(1007deg);}
-

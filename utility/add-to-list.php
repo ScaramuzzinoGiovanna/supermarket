@@ -1,5 +1,6 @@
 <?php
 $insertMessage = "";
+$addProd="";
 session_start();
 if (isset($_SESSION['id'])) {
     if (isset($_GET["productMarketId"]) && isset($_GET["quantity"])) {
@@ -9,10 +10,15 @@ if (isset($_SESSION['id'])) {
         $query = "INSERT INTO list (user, productAtMarket, quantity) VALUES (" . $_SESSION['id'] . ", " . $productAtMarket . ", " . $quantity . ")";
         if ($result = mysqli_query($con, $query)) {
             $insertMessage = "Inserimento avvenuto con successo";
+            $addProd = "0";
         } else {
             $insertMessage = "Errore durante l'inserimento nella lista. Riprovare";
+            $addProd = "1";
         }
     }
 }
-echo $insertMessage;
+else{
+    $addProd="2";
+}
+echo $addProd;
 ?>

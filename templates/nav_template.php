@@ -103,7 +103,7 @@
                         <div class="modal-header w-100 text-center">
                             <div style="flex-direction:column;">
                                 <h5 class="modal-title" id="exampleModalLongTitle">Modifica la tua posizione</h5>
-                                <p>per scoprire dove acquistare i prodotti più convenienti nella tua zona:</p>
+                                <p>Per scoprire dove acquistare i prodotti più convenienti nella tua zona:</p>
                             </div>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>

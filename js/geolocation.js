@@ -9,14 +9,15 @@ function capitalizeFirstLetter(string) {
 }
 
 function loadGeo() {
-    var location = capitalizeFirstLetter(document.getElementById("loc").value)
-
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", "utility/location.php?loc=" + location, true);
-    xmlhttp.send();
-    document.getElementById("position").value = location;
-    document.getElementById("loc").value = "";
-    if(!(location=== "")){
+    var location = capitalizeFirstLetter(document.getElementById("loc").value)  
+    if(!(location== "")){
+        console.log(location)
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "utility/location.php?loc=" + location, true);
+        xmlhttp.send();
+        document.getElementById("position").value = location;
+        document.getElementById("loc").value = "";
+    
         $('#geoModal').modal('hide');
         window.location.reload();
     }
@@ -99,3 +100,4 @@ function error_callback(error) {
 }
 //geo-alert active
 $('.geoAlert').toast('show');
+$('#ProductViewModalNoGeo').modal('show');

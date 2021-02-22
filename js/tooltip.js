@@ -1,7 +1,16 @@
 $(document).ready(function () {
     $('[data-toggle="tooltip-password"]').tooltip({
         placement: 'right',
-        title: " <h6>Le password devono essere composte da:</h6> <ul> <li> almeno un carattere e almeno un numero,</li><li> minimo 8 </li><li> massimo 20</li>",
+        title: " <strong>Le password devono essere composte da:</strong> <ul> <li> almeno un carattere e almeno un numero,</li><li> minimo 8 </li><li> massimo 20</li>",
+        animation: true,
+        html: true
+    });
+});
+
+$(document).ready(function () {
+    $('[data-toggle="tooltip-city"]').tooltip({
+        placement: 'right',
+        title: "La città serve per cercare i prodotti nella tua zona. Potrai modificarla in un secondo momento o fare ricerche in altre zone quando vuoi",
         animation: true,
         html: true
     });
