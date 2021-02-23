@@ -10,7 +10,7 @@ if (isset($_SESSION['id'])) {
     $query = "SELECT list.id AS listId, product.name AS productName, product.imgpath AS productImgpath, productatMarket.price AS productPrice, supermarket.address AS supermarketAddress, supermarket.city AS supermarketCity, enterprise.name AS enterpriseName, list.quantity as listQuantity
             FROM ((((list JOIN productatMarket ON list.productAtMarket=productatMarket.id) JOIN product ON product.id=productatMarket.product) JOIN supermarket ON supermarket.id=productatMarket.supermarket) JOIN enterprise ON supermarket.enterprise=enterprise.id)
             WHERE list.user=" . $_SESSION['id'] . "
-            ORDER BY `enterpriseName` ASC, `supermarketCity` ASC, `supermarketAddress` ASC";
+            ORDER BY `supermarketCity` ASC, `enterpriseName` ASC, `supermarketAddress` ASC";
     if ($result = mysqli_query($con, $query)) {
         $numRows = mysqli_num_rows($result);
         if ($numRows  = 1) {
@@ -18,16 +18,15 @@ if (isset($_SESSION['id'])) {
                 $addr = $r['supermarketAddress'];
                 $city = $r['supermarketCity'];
                 $entName = $r['enterpriseName'];
-                $array_list_super[$addr][$city][$entName][] = array("productName" => $r['productName'], 'productPrice' => $r['productPrice'], 'supermarketAddress' => $r['supermarketAddress'], 'supermarketCity' => $r['supermarketCity'], 'enterpriseName' => $r['enterpriseName'], 'productQuantity' => $r['listQuantity'], 'listId' => $r['listId'], 'productImgpath' => $r['productImgpath']);
+                $array_list_super[$city][$entName][$addr][] = array("productName" => $r['productName'], 'productPrice' => $r['productPrice'], 'supermarketAddress' => $r['supermarketAddress'], 'supermarketCity' => $r['supermarketCity'], 'enterpriseName' => $r['enterpriseName'], 'productQuantity' => $r['listQuantity'], 'listId' => $r['listId'], 'productImgpath' => $r['productImgpath']);
             }
-
-            foreach($array_list_super as $via => $sub1){
-                foreach($sub1 as $city => $sub2){
-                    foreach($sub2 as $entName => $sub3 ){
+            foreach($array_list_super as $city => $sub1){
+                foreach($sub1 as $entName => $sub2){
+                    foreach($sub2 as $addr => $sub3 ){
                         $sum = 0;
                         foreach($sub3 as $item){
                             $sum += $item['productPrice']*$item['productQuantity'];
-                            $supermarketPrice[$via][$city][$entName] = $sum;
+                            $supermarketPrice[$city][$entName][$addr] = $sum;
                         }
                     }
                 }

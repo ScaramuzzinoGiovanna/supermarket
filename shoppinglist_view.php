@@ -24,19 +24,19 @@ include("utility/list.php");
             </div> 
             <ul class="list-group">
        
-           <?php foreach($array_list_super as $via => $sub1){
-                    foreach($sub1 as $city => $sub2){
-                        foreach($sub2 as $entName => $sub3 ){   ?>
+           <?php foreach($array_list_super as $city => $sub1){
+                    foreach($sub1 as $entName => $sub2){
+                        foreach($sub2 as $addr => $sub3 ){   ?>
                         <li class="list-group-item list-group-item-secondary">
                             <div class="row">
                                 <div class="col">
                                     <h5> <?php echo $entName ?></h5>
                                     <br>
-                                    <p> <?php echo $via ?> &nbsp <?php echo $city ?> </p>
+                                    <p> <?php echo $addr ?> &nbsp <?php echo $city ?> </p>
                                 </div>
                                 <div class="col-auto ">
                                     <p class="text-xl-right">Totale spesa: </p>
-                                    <p class="text-xl-right">€ <?php echo $supermarketPrice[$via][$city][$entName] ?></p>
+                                    <p class="text-xl-right">€ <?php echo $supermarketPrice[$city][$entName][$addr] ?></p>
                                 </div>
                             </div>
                         </li>
