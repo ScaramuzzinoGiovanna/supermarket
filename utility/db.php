@@ -1,8 +1,8 @@
 <?php
-    $servername='127.0.0.1:3306';
-    $username='root';
-    $db_password='OddPala1993!';
-    $dbname = "progettoHCI";
+    $servername='localhost';
+    $username='spesaconveniente';
+    $db_password='';
+    $dbname = "my_spesaconveniente";
     $con=mysqli_connect($servername,$username,$db_password,"$dbname");
       if(!$con){
           die('Impossibile connettersi');
