@@ -7,8 +7,8 @@ $supermarketPrice = [];
 
 if (isset($_SESSION['id'])) {
     require "utility/db.php";
-    $query = "SELECT list.id AS listId, product.name AS productName, product.imgpath AS productImgpath, productatMarket.price AS productPrice, supermarket.address AS supermarketAddress, supermarket.city AS supermarketCity, enterprise.name AS enterpriseName, list.quantity as listQuantity
-            FROM ((((list JOIN productatMarket ON list.productAtMarket=productatMarket.id) JOIN product ON product.id=productatMarket.product) JOIN supermarket ON supermarket.id=productatMarket.supermarket) JOIN enterprise ON supermarket.enterprise=enterprise.id)
+    $query = "SELECT list.id AS listId, product.name AS productName, product.imgpath AS productImgpath, productatmarket.price AS productPrice, supermarket.address AS supermarketAddress, supermarket.city AS supermarketCity, enterprise.name AS enterpriseName, list.quantity as listQuantity
+            FROM ((((list JOIN productatmarket ON list.productatmarket=productatmarket.id) JOIN product ON product.id=productatmarket.product) JOIN supermarket ON supermarket.id=productatmarket.supermarket) JOIN enterprise ON supermarket.enterprise=enterprise.id)
             WHERE list.user=" . $_SESSION['id'] . "
             ORDER BY `supermarketCity` ASC, `enterpriseName` ASC, `supermarketAddress` ASC";
     if ($result = mysqli_query($con, $query)) {

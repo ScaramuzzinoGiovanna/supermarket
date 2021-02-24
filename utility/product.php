@@ -29,8 +29,8 @@ if (isset($_SESSION['location'])) {
     $location = $_SESSION['location'];
 
 
-    $query = "SELECT product.name AS productName, product.imgpath AS productImgpath, productatMarket.id AS productatmarketId, productatMarket.price AS productatmarketPrice, supermarket.address AS supermarketAddress, supermarket.city AS supermarketCity, enterprise.name AS enterpriseName, enterprise.imgpath AS enterpriseImgpath 
-    FROM (((product JOIN productatMarket ON product.id=productatMarket.product) JOIN supermarket ON supermarket.id=productatMarket.supermarket) JOIN enterprise ON enterprise.id=supermarket.enterprise) 
+    $query = "SELECT product.name AS productName, product.imgpath AS productImgpath, productatmarket.id AS productatmarketId, productatmarket.price AS productatmarketPrice, supermarket.address AS supermarketAddress, supermarket.city AS supermarketCity, enterprise.name AS enterpriseName, enterprise.imgpath AS enterpriseImgpath 
+    FROM (((product JOIN productatmarket ON product.id=productatmarket.product) JOIN supermarket ON supermarket.id=productatmarket.supermarket) JOIN enterprise ON enterprise.id=supermarket.enterprise) 
     WHERE product.name='" . $product . "' AND supermarket.city='" . $location . "' 
     ORDER BY `productatmarketPrice` ASC";
 
