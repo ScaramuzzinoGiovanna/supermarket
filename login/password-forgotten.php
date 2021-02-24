@@ -51,8 +51,8 @@ if (isset($_POST["email"]) && (!empty($_POST["email"]))) {
       $output='<p>Caro utente,</p>';
       $output.='<p>Clicca il link seguente per resettare la tua password.</p>';
       $output.='<p>-------------------------------------------------------------</p>';
-      $output .= '<p><a href="http://localhost/supermarket/reset-password_view.php?key=' . $key . '&email=' . $email . '&action=reset" target="_blank">
-      http://localhost/supermarket/reset-password_view.php?key=' . $key . '&email=' . $email . '&action=reset</a></p>';
+      $output .= '<p><a href="http://spesaconveniente.altervista.org//reset-password_view.php?key=' . $key . '&email=' . $email . '&action=reset" target="_blank">
+      http://spesaconveniente.altervista.org/reset-password_view.php?key=' . $key . '&email=' . $email . '&action=reset</a></p>';
       $output.='<p>-------------------------------------------------------------</p>';
       $output.='<p>Se non fosse possibile cliccare il link, copialo nella barra degli indirizzi.
       Il link non sarà più valido dopo un giorno dalla richiesta.</p>';
