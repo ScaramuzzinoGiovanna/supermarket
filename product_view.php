@@ -9,13 +9,6 @@ include("templates/head_template.php");
 
 <body>
     <?php include("templates/nav_template.php"); ?>
-    <!--<div class="col-md-6">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-            <li class="breadcrumb-item"><a href="search_view.php">ALimenti</a></li>
-            <li class="breadcrumb-item active">Nome_prodotto</li>
-        </ol>
-    </div>-->
     <div class="container containerPaddingMargin">
         <div class="d-flex justify-content-center h-100">
             <div class="card">
@@ -74,9 +67,9 @@ include("templates/head_template.php");
                                         <h5 class="alert-heading">Errore durante l'inserimento nella lista. Riprovare</h5>
                                     </div>
                                     <td scope="row"><img class='super-logo' src="<?php echo $prod[0] ?>"></td>
-                                    <td class="col-2" id="indirizzo" ><?php echo $prod[1] ?>, <?php echo $prod[2] ?> </td>
-                                    <td class="col-2"><?php echo $prod[4] ?></td>
-                                    <td class="col-2">
+                                    <td class="col-2 align-middle" id="indirizzo" ><?php echo $prod[1] ?>, <?php echo $prod[2] ?> </td>
+                                    <td class="col-2 align-middle"><?php echo $prod[4] ?></td>
+                                    <td class="col-2 pt-4">
                                         <div class="form-group">
                                             <form>
                                                 <select class="form-control-xs" id="quantityId<?php echo $prod[5] ?>">
@@ -88,7 +81,7 @@ include("templates/head_template.php");
                                         </div>
                                     </td>
                                     <td class="col-2">
-                                        <a class="btn btn-lg px-4" role="button" onclick="addToList(<?php echo $prod[5] ?>)"> <img class= "iconAddList" id="iconAddList<?php echo $prod[5] ?>" type="button" data-toggle="tooltip-lista" src="images/plus-circle.svg" height="30" alt="aggiungi alla lista"></a>
+                                        <a class="btn pt-2 bt-1" role="button" onclick="addToList(<?php echo $prod[5] ?>)"> <img class= "iconAddList" id="iconAddList<?php echo $prod[5] ?>" type="button" data-toggle="tooltip-lista" src="images/plus-circle.svg" height="25" alt="aggiungi alla lista"></a>
                                     </td>
                                 </tr>
 

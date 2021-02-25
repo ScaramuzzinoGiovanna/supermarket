@@ -23,11 +23,19 @@ include("utility/list.php");
             </a>
             </div> 
             <ul class="list-group">
+            <select class="form-control-xs" id="filter-material">
+                <option value=""> </option>
+                <?php foreach($array_list_super as $city => $sub1){
+                    foreach($sub1 as $entName => $sub2){
+                        foreach($sub2 as $addr => $sub3 ){   ?>
+                <option value="<?php echo $entName.", ". $city.", ". $addr?>"><?php echo $entName.", ". $city.", ". $addr?> </option>
+                <?php }}} ?>
+            </select>
        
            <?php foreach($array_list_super as $city => $sub1){
                     foreach($sub1 as $entName => $sub2){
                         foreach($sub2 as $addr => $sub3 ){   ?>
-                        <li class="list-group-item list-group-item-secondary">
+                           <li class="list-group-item list-group-item-secondary supermarket <?php echo $entName.", ". $city.", ". $addr?>">
                             <div class="row">
                                 <div class="col">
                                     <h5> <?php echo $entName ?></h5>
@@ -35,35 +43,35 @@ include("utility/list.php");
                                     <p> <?php echo $addr ?> &nbsp <?php echo $city ?> </p>
                                 </div>
                                 <div class="col-auto ">
-                                    <p class="text-xl-right">Totale spesa: </p>
-                                    <p class="text-xl-right">€ <?php echo $supermarketPrice[$city][$entName][$addr] ?></p>
+                                    <p class="text-right">Totale spesa: </p>
+                                    <p class="text-right">€ <?php echo $supermarketPrice[$city][$entName][$addr] ?></p>
                                 </div>
                             </div>
                         </li>
                     <?php foreach($sub3 as $item){ ?>
-                        <fieldset>
+                        <fieldset class="supermarket <?php echo $entName.", ". $city.", ". $addr?>">
                             <li class="list-group-item">
                                 <div class="form-group">
-                                    <div class="row inline-block">
-                                        <div class="col-xs-1 col-sm-1 col-md-1 col-xl-1">
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input chkbox" id="<?php echo $item['listId']?>" type="checkbox" value="<?php echo $item['listId'] ?>">
+                                    <div class="row">
+                                        <div class="col-1 col-sm-1 col-md-1 col-xl-1">
+                                            <div class="custom-control custom-checkbox " id="checkboxList">
+                                                <input class="custom-control-input chkbox" id="<?php echo $item['listId']?>" onclick="selectedfromList(<?php echo $item['listId']?>)" type="checkbox" value="<?php echo $item['listId'] ?>">
                                                 <label class="custom-control-label" for="<?php echo $item['listId'] ?>"></label>
                                             </div>
                                         </div>
-                                        <div class="col-sm-1 col-md-1 col-xl-2">
+                                        <div class="col-1 col-sm-1 col-md-2 col-xl-2">
                                             <img class="prodImgList" src=<?php echo $item['productImgpath'] ?>>
                                         </div>
-                                        <div class=" col-xs-3 col-sm-3 col-md-2 col-xl-2 ">
-                                        <a href="product_view.php?product=<?php echo str_replace(' ', '_', $item['productName'])?>"><p class="font-weight-bold"> <?php echo $item['productName'] ?> </P></a>
+                                        <div class=" col-12 col-sm-3 offset-sm-1 col-md-2 col-xl-2 ">
+                                        <a href="product_view.php?product=<?php echo str_replace(' ', '_', $item['productName'])?>"><p id="nameProd<?php echo $item['listId']?>" class="font-weight-bold"> <?php echo $item['productName'] ?> </P></a>
                                         </div>
-                                        <div class="col-sm-1 offset-sm-2">
-                                        <span class="badge badge-primary badge-pill">Q.tà: <?php echo $item['productQuantity'] ?></span>
-                                           
-                                        </div>
-                                        <div class="col-sm-1 col-md-2 col-xl-2 offset-sm-2 text-xl-right">
-                                            <p> € <?php echo $item['productPrice'] ?>/pz</p>
-                                        </div>
+                                            <div class="col-6 col-sm-1 offset-sm-1 col-md-1 col-xl-1 ">
+                                            <span class="badge badge-primary badge-pill" id="quantityBadge">Q.tà: <?php echo $item['productQuantity'] ?></span>
+                                            
+                                            </div>
+                                            <div class=" col-6 col-sm-1 col-md-2 col-xl-2 offset-sm-2 text-right">
+                                                <p> € <?php echo $item['productPrice'] ?>/pz</p>
+                                            </div>
                                     </div>
                                 </div>
                             </li>
