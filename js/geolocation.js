@@ -1,4 +1,4 @@
-document.getElementById("loc").addEventListener("keydown", function(e) {
+document.getElementById("loc").addEventListener("keydown", function (e) {
     if (e.code == 'Enter') {
         document.getElementById("loadGeoButton").click();
     }
@@ -9,26 +9,32 @@ function capitalizeFirstLetter(string) {
 }
 
 function loadGeo() {
-    var location = capitalizeFirstLetter(document.getElementById("loc").value)  
-    if(!(location== "")){
-        console.log(location)
+    var location = capitalizeFirstLetter(document.getElementById("loc").value)
+    if (!(location == "")) {
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", "utility/location.php?loc=" + location, true);
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("position").value = location;
+                document.getElementById("loc").value = "";
+
+                $('#geoModal').modal('hide');
+                console.log('ricarica');
+                window.location.reload();
+            }
+        }
+        xmlhttp.open("GET", "https://spesaconveniente.altervista.org/utility/location.php?loc=" + location, true);
         xmlhttp.send();
-        document.getElementById("position").value = location;
-        document.getElementById("loc").value = "";
-    
-        $('#geoModal').modal('hide');
-        window.location.reload();
+
     }
     $('.geoAlert').toast('hide');
 }
 
-
 function geo() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, error_callback, { enableHighAccuracy: false });
-    } else {    
+        navigator.geolocation.getCurrentPosition(showPosition, error_callback, {
+            enableHighAccuracy: false
+        });
+    } else {
         alert('No geolocalization')
     }
 
@@ -49,9 +55,13 @@ function displayLocation(latitude, longitude) {
         document.getElementById("position").value = result
         $('.geoAlert').toast('hide');
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", "utility/location.php?loc=" + result, true);
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                window.location.reload();
+            }
+        }
+        xmlhttp.open("GET", "https://spesaconveniente.altervista.org/utility/location.php?loc=" + result, true);
         xmlhttp.send();
-        window.location.reload();
     })
 }
 
@@ -64,7 +74,7 @@ function convertToAddress(geopos) {
     var defObject = $.Deferred();
     geocodeService.reverse().latlng(geopos).run(function (error, result) {
         //resolve promise
-        defObject.resolve(result.address.City)//address.Match_addr);
+        defObject.resolve(result.address.City) //address.Match_addr);
 
     })
     //return promise object

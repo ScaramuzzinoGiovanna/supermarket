@@ -12,7 +12,7 @@ function showResult() {
       autocomplete(document.getElementById("livesearch"), arr);
     }
   }
-  xmlhttp.open("GET", "search/livesearch.php?search=" + str, true);
+  xmlhttp.open("GET", "https://spesaconveniente.altervista.org/search/livesearch.php?search=" + str, true);
   xmlhttp.send();
 }
 

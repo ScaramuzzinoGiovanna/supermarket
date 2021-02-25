@@ -38,8 +38,10 @@ if (count($_POST) > 0) {
                 $_SESSION["id"] = $row['id'];
                 $_SESSION["name"] = $row['name'];
                 $_SESSION["surname"] = $row['surname'];
-                $_SESSION["email"] = $row['email'];
-                $_SESSION["location"] = $row['location'];
+                $_SESSION["email"] = $row['email'];   
+                if (!isset($_SESSION["location"])){
+                    $_SESSION["location"] = $row['location'];
+                }
                 header("Location:index.php"); 
             } else {
                 $message = "E-mail o Password non validi!";

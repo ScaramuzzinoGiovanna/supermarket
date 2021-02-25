@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<?php include("modals.php"); ?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,4 +12,5 @@
 
     <link rel="stylesheet" type="text/css" href="css/minty/bootstrap.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+
 

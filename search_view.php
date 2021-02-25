@@ -16,10 +16,11 @@ include("search/search.php")
             <li class="breadcrumb-item active"> Cerca</li>
         </ol>
     </div>-->
-    <div class="text-center">
-        <h5>Confronta i migliori prezzi per <h5 class= pink-text> "<?php echo $charSearch ?>" </h5> </h5>
-    </div>
+    
     <div class="container containerPaddingMargin">
+        <div class="text-center mb-4">
+            <h5>Confronta i migliori prezzi per <h5 class= pink-text> "<?php echo $charSearch ?>" </h5> </h5>
+        </div>
         <div class="card">
             <div class="jumbotron-fluid">
                 <table class="table tableSearchProducts">

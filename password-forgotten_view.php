@@ -54,13 +54,6 @@
                     </div>
                 </form>  
             </div>
-
-            <div class="card-footer">
-                <div class="d-flex justify-content-center links">
-                   Hai problemi?&nbsp
-                    <a href="Contatti.html"> Contattaci</a>
-                </div>
-            </div>
         </div>
     </div>
 </div>

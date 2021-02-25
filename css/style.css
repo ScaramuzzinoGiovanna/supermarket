@@ -158,10 +158,10 @@
 }
 
 .super-logo {
-    width: 50%;
+    width: 80%;
 }
 
-.breadcrumb {
+/*.breadcrumb {
     background-color: whitesmoke;
 }
 
@@ -196,7 +196,7 @@
 .breadcrumb a:hover {
     color: #5eb69d;
 }
-* { box-sizing: border-box; }
+* { box-sizing: border-box; }*/
 
 body {
   font: 16px Arial;
@@ -249,7 +249,7 @@ img.prodImgList{
 
 
 .containerPaddingMargin{
-    margin-top:50px;
+    margin-top:30px;
     margin-bottom:50px;
     padding-left: 0px;
     padding-right: 0px;
@@ -353,6 +353,7 @@ img.prodImgList{
     }  
 }
 
+
   .fixedButton{
     max-width: 200px; 
   }
@@ -375,5 +376,31 @@ img.prodImgList{
 .geoAlert:hover{
     box-shadow: 0 0 11px rgba(117, 10, 10, 0.2); 
 }
-.add:hover, .trashSVG:hover{
-filter: invert(1004) sepia(80) saturate(109) hue-rotate(1007deg);}
+
+ .trashSVG:hover{
+filter:  invert(85%) sepia(13%) saturate(5690%) hue-rotate(298deg) brightness(103%) contrast(90%);}
+
+.iconAddList:hover{
+    filter:  invert(67%) sepia(38%) saturate(318%) hue-rotate(112deg) brightness(98%) contrast(91%);}
+
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width:100%
+  }
+#indirizzo{
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+#indirizzo:hover {
+text-overflow: clip;
+overflow-x: scroll;
+overflow-x: visible;
+position:relative;
+z-index:100;
+max-height: none;
+
+}

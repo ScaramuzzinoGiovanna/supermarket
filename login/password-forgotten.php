@@ -48,46 +48,74 @@ if (isset($_POST["email"]) && (!empty($_POST["email"]))) {
       VALUES ('" . $email . "', '" . $key . "', '" . $expDate . "');"
       );
 
-      $output='<p>Caro utente,</p>';
-      $output.='<p>Clicca il link seguente per resettare la tua password.</p>';
-      $output.='<p>-------------------------------------------------------------</p>';
-      $output .= '<p><a href="http://spesaconveniente.altervista.org//reset-password_view.php?key=' . $key . '&email=' . $email . '&action=reset" target="_blank">
-      http://spesaconveniente.altervista.org/reset-password_view.php?key=' . $key . '&email=' . $email . '&action=reset</a></p>';
-      $output.='<p>-------------------------------------------------------------</p>';
-      $output.='<p>Se non fosse possibile cliccare il link, copialo nella barra degli indirizzi.
-      Il link non sarà più valido dopo un giorno dalla richiesta.</p>';
-      $output.='<p>Se non hai richiesto la modifica della tua password, ingora questa mail. Tuttavia, ti consigliamo di modificarla per ragioni di sicurezza, nel caso che qualcuno abbia avuto accesso al tuo account.</p>';
-      $output.='<p>Grazie,</p>';
-      $output.='<p>Lo Staff di SpesaConveniente</p>';
+      $output='
+      <html>
+         <head>
+            <title>Modifica Password - SpesaConveniente</title>
+         </head>
+         <body>
+            <p>Caro utente,</p>
+            <p>Clicca il link seguente per resettare la tua password.</p>
+            <p>-------------------------------------------------------------</p>
+            <p><a href="http://spesaconveniente.altervista.org//reset-password_view.php?key=' . $key . '&email=' . $email . '&action=reset" target="_blank">
+            http://spesaconveniente.altervista.org/reset-password_view.php?key=' . $key . '&email=' . $email . '&action=reset</a></p>
+            <p>-------------------------------------------------------------</p>
+            <p>Se non fosse possibile cliccare il link, copialo nella barra degli indirizzi.
+            Il link non sarà più valido dopo un giorno dalla richiesta.</p>
+            <p>Se non hai richiesto la modifica della tua password, ingora questa mail. Tuttavia, ti consigliamo di modificarla per ragioni di sicurezza, nel caso che qualcuno abbia avuto accesso al tuo account.</p>
+            <p>Grazie,</p>
+            <p>Lo Staff di SpesaConveniente</p>
+         </body>
+      </html>
+      ';
+      // $output.='<p>Clicca il link seguente per resettare la tua password.</p>';
+      // $output.='<p>-------------------------------------------------------------</p>';
+      // $output .= '<p><a href="http://spesaconveniente.altervista.org//reset-password_view.php?key=' . $key . '&email=' . $email . '&action=reset" target="_blank">
+      // http://spesaconveniente.altervista.org/reset-password_view.php?key=' . $key . '&email=' . $email . '&action=reset</a></p>';
+      // $output.='<p>-------------------------------------------------------------</p>';
+      // $output.='<p>Se non fosse possibile cliccare il link, copialo nella barra degli indirizzi.
+      // Il link non sarà più valido dopo un giorno dalla richiesta.</p>';
+      // $output.='<p>Se non hai richiesto la modifica della tua password, ingora questa mail. Tuttavia, ti consigliamo di modificarla per ragioni di sicurezza, nel caso che qualcuno abbia avuto accesso al tuo account.</p>';
+      // $output.='<p>Grazie,</p>';
+      // $output.='<p>Lo Staff di SpesaConveniente</p></body></html>';
       $body = $output;
 
       $subject = "Modifica Password - SpesaConveniente";
       $email_to = $email;
       $fromserver = "spendipocohci@gmail.com";
 
-      $mail = new PHPMailer();
-      $mail->IsSMTP();
-      // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-      $mail->SMTPDebug = SMTP::DEBUG_OFF;
+      $headers[] = 'MIME-Version: 1.0';
+      $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+      $headers[] = "To: ". $email_to;
+      $headers[] = "From: SpesaConveniente <spendipocohci@gmail.com>";
 
-      $mail->Host = "smtp.gmail.com"; // Enter your host here
-      $mail->SMTPAuth = true;
-      $mail->Port = 587;
-      $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-      $mail->SMTPAuth = true;
-      $mail->Username = "spendipocohci@gmail.com"; // Enter your email here
-      $mail->Password = "HumanComputerInteraction"; //Enter your password here
+      mail($email_to, $subject, $body, implode("\r\n", $headers));
 
-      $mail->IsHTML(true);
-      $mail->setFrom("spendipocohci@gmail.com", "SpesaConveniente");
-      $mail->AddAddress($email_to);
-      $mail->Subject = $subject;
-      $mail->Body = $body;
+      $mailSend =  "Riceverai entro pochi minuti una email con le istruzioni per generare una nuova password!";
 
-      if (!$mail->Send()) {
-         $error = "Erore nell'invio della mail: " . $mail->ErrorInfo;
-      } else {
-         $mailSend =  "Riceverai entro pochi minuti una email con le istruzioni per generare una nuova password!";
-      }
+      // $mail = new PHPMailer();
+      // $mail->IsSMTP();
+      // // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+      // $mail->SMTPDebug = SMTP::DEBUG_OFF;
+
+      // $mail->Host = "smtp.gmail.com"; // Enter your host here
+      // $mail->SMTPAuth = true;
+      // $mail->Port = 587;
+      // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+      // $mail->SMTPAuth = true;
+      // $mail->Username = "spendipocohci@gmail.com"; // Enter your email here
+      // $mail->Password = "HumanComputerInteraction"; //Enter your password here
+
+      // $mail->IsHTML(true);
+      // $mail->setFrom("spendipocohci@gmail.com", "SpesaConveniente");
+      // $mail->AddAddress($email_to);
+      // $mail->Subject = $subject;
+      // $mail->Body = $body;
+
+      // if (!$mail->Send()) {
+      //    $error = "Erore nell'invio della mail: " . $mail->ErrorInfo;
+      // } else {
+      //    $mailSend =  "Riceverai entro pochi minuti una email con le istruzioni per generare una nuova password!";
+      // }
    }
 }

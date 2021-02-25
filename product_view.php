@@ -44,9 +44,10 @@ include("templates/head_template.php");
                 <?php if (isset($_SESSION["location"])) { ?>
 
                     <hr class="my-8">
-                    <table class="table table-responsive">
+                    <div class="table-responsive">
+                    <table class="table">
                         <thead>
-                            <tr>
+                            <tr class="table-secondary">
                                 <th class="col-2">Supermercato</th>
                                 <th class="col-2">Indirizzo</th>
                                 <th class="col-2">Prezzo (€)</th>
@@ -72,8 +73,8 @@ include("templates/head_template.php");
                                     <div class="alert alert-danger" role="alert" id="prodNoAdd" style="display:none">
                                         <h5 class="alert-heading">Errore durante l'inserimento nella lista. Riprovare</h5>
                                     </div>
-                                    <td class="col-2"><img class='super-logo' src="<?php echo $prod[0] ?>"></td>
-                                    <td class="col-2"><?php echo $prod[1] ?>, <?php echo $prod[2] ?> </td>
+                                    <td scope="row"><img class='super-logo' src="<?php echo $prod[0] ?>"></td>
+                                    <td class="col-2" id="indirizzo" ><?php echo $prod[1] ?>, <?php echo $prod[2] ?> </td>
                                     <td class="col-2"><?php echo $prod[4] ?></td>
                                     <td class="col-2">
                                         <div class="form-group">
@@ -87,7 +88,7 @@ include("templates/head_template.php");
                                         </div>
                                     </td>
                                     <td class="col-2">
-                                        <a class="btn btn-lg px-4 add" role="button" onclick="addToList(<?php echo $prod[5] ?>)"> <img type="button" data-toggle="tooltip-lista" src="images/plus-circle.svg" height="30" alt="aggiungi alla lista"></a>
+                                        <a class="btn btn-lg px-4" role="button" onclick="addToList(<?php echo $prod[5] ?>)"> <img class= "iconAddList" id="iconAddList<?php echo $prod[5] ?>" type="button" data-toggle="tooltip-lista" src="images/plus-circle.svg" height="30" alt="aggiungi alla lista"></a>
                                     </td>
                                 </tr>
 
@@ -95,6 +96,7 @@ include("templates/head_template.php");
                                 } ?>
                         </tbody>
                     </table>
+                    </div>
                 <?php } ?>
             <?php } ?>
 

@@ -17,7 +17,7 @@ if (
     if ($row == "") {
         $error = '<h2>Link non utilizzabile</h2>
         <p>Il link è errato. Potresti aver copiato in modo sbagliato il link dalla mail oppure aver già usato questo link per cambiare password.</p>
-        <p><a href="https://localhost/supermarket/password-forgotten_view.php">
+        <p><a href="http://spesaconveniente.altervista.org/password-forgotten_view.php">
         Clicca qui</a> per cambiare password.</p>';
     } else {
         $row = mysqli_fetch_assoc($result);
@@ -27,7 +27,7 @@ if (
         } else {
             $error = '<h2>Link Scaduto</h2>
             <p>Il link è scaduto. Stai cercando di usare un link scaduto che ha validità solo per 24 ore (1 giorno dalla richiesta) </p>
-            <p><a href="https://localhost/supermarket/password-forgotten_view.php">
+            <p><a href="http://spesaconveniente.altervista.org/password-forgotten_view.php">
             Clicca qui</a> per cambiare password.</p>';
         }
     }

@@ -57,25 +57,12 @@ include("login/reset-password.php");
                                     </div>
                                     <input type="password" required="" name="confirm_password" class="form-control accesso" id="exampleInputPassword2">
                                 </div>
-                                <!--<?php if ($passwordErr != "") { ?>
-                                    <small id="passwordHelp" class="text-danger">
-                                        <? echo $passwordErr?>
-                                    </small>
-                                <?php
-                                }
-                                ?>-->
                             </div>
                             <input type="hidden" name="email" value="<?php echo $email; ?>" />
                             <div class="form-group">
                                 <input type="submit" name="submit" class="btn btn-primary btn-sm login_btn" value="Conferma modifica e accedi"></input>
                             </div>
                         </form>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="d-flex justify-content-center links">
-                        Hai problemi?&nbsp
-                        <a href="Contatti.html"> Contattaci</a>
                     </div>
                 </div>
             </div>
