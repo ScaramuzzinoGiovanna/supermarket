@@ -1,9 +1,24 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand btn btn-outline-primary navbutton" href="index.php">SpesaConveniente</a>
+    <a class="navbar-brand btn btn-outline-primary navbutton" href="index.php">SpesaConveniente</a>   
+     <!--collapse-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         <span class="sr-only">(current)</span>
     </button>
+    <!--search bar out collapse mode (mobile)-->
+    <div class= col-12 id="search-form-mobile">
+    <form  method="post" action="search_view.php">
+        <div class="input-group pt-3 pb-3">
+            <input class="form-control py-2 border-right-0 border inputSearch" name="search" type="text" id="livesearchMobile" autocomplete="off" placeholder="Cerca prodotti" onkeyup="showResultMobile()" required>
+            <span class="input-group-append">
+                <button class="btn btn-outline-secondary border-left-0 border" type="submit">
+                    <img class="" src="images/search.svg" alt="cerca">
+                </button>
+            </span>
+
+        </div>
+    </form>
+</div>
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item align-self-md-stretch">
@@ -49,7 +64,7 @@
             </li>
         </ul>
         <!-- form search -->
-        <form class="form-inline my-2 my-lg-0 " method="post" action="search_view.php">
+        <form class="form-inline my-2 my-lg-0" id="search-form" method="post" action="search_view.php">
             <div class="input-group">
                 <input class="form-control py-2 border-right-0 border inputSearch" name="search" type="text" id="livesearch" autocomplete="off" placeholder="Cerca prodotti" onkeyup="showResult()" required>
                 <span class="input-group-append">
@@ -62,7 +77,7 @@
         </form>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <div class="btn-group">
+                <div class="btn-group" id="geolocation-xl">
                     <!-- Button geolocation trigger modal -->
                     <a data-toggle="tooltip" data-placement="bottom" title="Imposta località">
                         <button class="btn navbutton" data-toggle="modal" data-target="#geoModal">
@@ -75,8 +90,8 @@
                         </button>
                     </a>
                     <!--geo alert -->
-                    <?php if (!isset($_SESSION["location"]) ) { ?>
-                        <div class="toast show geoAlert" data-autohide="false" role="alert" aria-live="assertive" aria-atomic="true"> 
+                    <?php if (!isset($_SESSION["location"])) { ?>
+                        <div class="toast show geoAlert" data-autohide="false" role="alert" aria-live="assertive" aria-atomic="true">
                             <div class="toast-header">
                                 <img src="images/geo-alt.svg" class="p-1">
                                 <strong class="mr-auto">Localizzati</strong>
@@ -116,6 +131,36 @@
             <?php
             }
             ?>
+            <div class="btn-group" id="geolocation-mobile">
+                    <!-- Button geolocation trigger modal -->
+                    <a data-toggle="tooltip" data-placement="bottom" title="Imposta località">
+                        <button class="btn navbutton" data-toggle="modal" data-target="#geoModal">
+                            <img class="iconGPS" src="images/geo.png" alt="gps">
+                            <input class="navbutton buttonNoBorder text-capitalize" type="submit" id="position" value="<?php if (isset($_SESSION['location'])) {
+                                                                                                                            echo $_SESSION['location'];
+                                                                                                                        } else {
+                                                                                                                            echo '';
+                                                                                                                        }; ?>" readonly="readonly" />
+                        </button>
+                    </a>
+                    <!--geo alert -->
+                    <?php if (!isset($_SESSION["location"])) { ?>
+                        <div class="toast show geoAlert" data-autohide="false" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="toast-header">
+                                <img src="images/geo-alt.svg" class="p-1">
+                                <strong class="mr-auto">Localizzati</strong>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <a data-toggle="modal" data-target="#geoModal">
+                                <div class="toast-body">
+                                    <small> Per scoprire i prodotti più convenienti nella tua zona</small>
+                                </div>
+                            </a>
+                        </div>
+                    <?php } ?>
+                </div>
 
         </ul>
     </div>
