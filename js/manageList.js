@@ -1,6 +1,8 @@
 function addToList(idProductAtMarket) {
     var quantity = document.getElementById("quantityId" + idProductAtMarket).value
     var icon = document.getElementById("iconAddList" + idProductAtMarket).src
+    var tooltip = document.getElementById("iconAddList" + idProductAtMarket).title
+
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -8,7 +10,7 @@ function addToList(idProductAtMarket) {
             if (addProd == '0') {
                 $('#iconAddList' + idProductAtMarket).attr("src", "images/check-circle.svg");
                 $('#iconAddList' + idProductAtMarket).attr("class", "iconColor");
-
+                $('#iconAddList' + idProductAtMarket).attr("title", "Prodotto aggiunto in lista");
                 $('#addProd').show();
                 setTimeout(function () {
                     $('#addProd').hide();
@@ -18,9 +20,11 @@ function addToList(idProductAtMarket) {
             } else {
                 $('#iconAddList' + idProductAtMarket).attr("src", "images/x-circle.svg");
                 $('#iconAddList' + idProductAtMarket).attr("class", "iconColor");
-
+                $('#iconAddList' + idProductAtMarket).attr("title", "Errore");
                 setTimeout(function () {
                     $('#iconAddList' + idProductAtMarket).attr("src", icon)
+                    $('#iconAddList' + idProductAtMarket).attr("title", "Prodotto aggiunto in lista");
+
                 }, 3000);
                 $('#prodNoAdd').show();
                 setTimeout(function () {

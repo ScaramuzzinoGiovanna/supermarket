@@ -81,10 +81,9 @@ include("templates/head_template.php");
                                         </div>
                                     </td>
                                     <td class="col-2">
-                                        <a class="btn pt-2 bt-1" role="button" onclick="addToList(<?php echo $prod[5] ?>)"> <img class= "iconAddList" id="iconAddList<?php echo $prod[5] ?>" type="button" data-toggle="tooltip-lista" src="images/plus-circle.svg" height="25" alt="aggiungi alla lista"></a>
+                                        <a class="btn pt-2 bt-1" role="button" onclick="addToList(<?php echo $prod[5] ?>)"> <img class= "iconAddList" id="iconAddList<?php echo $prod[5] ?>" type="button" data-toggle="tooltip" data-placement="bottom" title="Aggiungi in lista" src="images/plus-circle.svg" height="25" alt="aggiungi alla lista"></a>
                                     </td>
                                 </tr>
-
                         <?php }
                                 } ?>
                         </tbody>
@@ -96,34 +95,8 @@ include("templates/head_template.php");
             </div>
         </div>
     </div>
-    <!-- Modal no logged- no add to list -->
-    <div class="modal fade" id="prodNoLoggedModal" tabindex="-1" role="dialog" aria-labelledby="prodNoLoggedModal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header w-100 text-center">
-                    <div style="flex-direction:column;">
-                        <h5 class="modal-title"> Non puoi ancora aggiungere elementi alla lista:</h5>
-                    </div>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body w-100 text-center bodyModalLocation">
-
-                    <div>
-                        <a class="btn btn-secondary" href="login_view.php">Accedi
-                        </a>
-                    </div>
-                    <p class="marginTop">oppure</p>
-                    <div>
-                        <a class="btn btn-secondary" href="signin_view.php">Registrati
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <?php include("templates/script_template.php"); ?>
+    <?php include("templates/modals.php"); ?>
     <script type="text/javascript" src="js/manageList.js"></script>
 
 </body>
