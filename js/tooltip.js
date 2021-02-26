@@ -5,36 +5,21 @@ $(document).ready(function () {
         animation: true,
         html: true
     });
-});
 
-$(document).ready(function () {
     $('[data-toggle="tooltip-city"]').tooltip({
         placement: 'right',
         title: "La città serve per cercare i prodotti nella tua zona. Potrai modificarla in un secondo momento o fare ricerche in altre zone quando vuoi",
         animation: true,
         html: true
     });
-});
-
-$(document).ready(function () {
-    $('[data-toggle="tooltip-lista"]').tooltip({
-        placement: 'bottom',
-        title: " <h6> Aggiungi alla lista</h6>",
-        animation: true,
-        html: true
-    });
-});
-
-$(document).ready(function () {
+       
     $('[data-toggle="tooltip-location"]').tooltip({
         placement: 'bottom',
         title: " <h6>Imposta località</h6> ",
         animation: true,
         html: true
     });
-});
 
-$(document).ready(function () {
     $('[data-toggle="tooltip-location2"]').tooltip({
         placement: 'bottom',
         title: "<p>Utilizza posizione attuale<p> ",
