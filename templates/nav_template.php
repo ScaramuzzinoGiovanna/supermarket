@@ -64,7 +64,7 @@
             </li>
         </ul>
         <!-- form search -->
-        <form class="form-inline my-2 my-lg-0" id="search-form" method="post" action="search_view.php">
+        <form class="my-2 my-lg-0" id="search-form" method="post" action="search_view.php">
             <div class="input-group">
                 <input class="form-control py-2 border-right-0 border inputSearch" name="search" type="text" id="livesearch" autocomplete="off" placeholder="Cerca prodotti" onkeyup="showResult()" required>
                 <span class="input-group-append">

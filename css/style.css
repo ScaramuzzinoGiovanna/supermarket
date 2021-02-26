@@ -303,7 +303,7 @@ img.prodImgList{
 
 }
 
-/* hide search bar in collapse mode*/
+/* hide search bar in collapse mode (pc mode)*/
 @media screen and (max-width: 992px) {
     #search-form{
          visibility:hidden;
@@ -314,6 +314,10 @@ img.prodImgList{
          display: none;
      }
  
+ }
+ 
+ #search-form{
+     width:50%;
  }
  
 /* lg */
