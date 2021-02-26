@@ -26,7 +26,7 @@ include("templates/head_template.php");
                             </div>
                         <?php } else { ?>
                             <!--product found-->
-                            <div class="preview col-4">
+                            <div class="preview col-6">
                                 <img class="prodImg" src="<?php echo $prodImg ?>">
                             </div>
                             <div class="details col-6">
@@ -38,56 +38,55 @@ include("templates/head_template.php");
 
                     <hr class="my-8">
                     <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr class="table-secondary">
-                                <th class="col-2">Supermercato</th>
-                                <th class="col-2">Indirizzo</th>
-                                <th class="col-2">Prezzo (€)</th>
-                                <th class="col-2">Quantità</th>
-                                <th class="col-2"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- product not found in selected city -->
-                            <?php if (empty($arr)) { ?>
-                                <tr class="table-default">
-                                    <td colspan=4>
-                                        <h5> Ci dispiace, non abbiamo informazioni disponibili per la tua città </h5>
-                                    <td>
-                                <tr>
-                                    <?php } else {
-                                    foreach ($arr as $prod) { ?>
-                                <tr class="table-default">
-
-                                    <div class="alert alert-success" role="alert" id="addProd" style="display:none; z-index:50">
-                                        <h5 class="alert-heading">Prodotto aggiunto con successo!</h5>
-                                    </div>
-                                    <div class="alert alert-danger" role="alert" id="prodNoAdd" style="display:none">
-                                        <h5 class="alert-heading">Errore durante l'inserimento nella lista. Riprovare</h5>
-                                    </div>
-                                    <td scope="row"><img class='super-logo' src="<?php echo $prod[0] ?>"></td>
-                                    <td class="col-2 align-middle" id="indirizzo" ><?php echo $prod[1] ?>, <?php echo $prod[2] ?> </td>
-                                    <td class="col-2 align-middle"><?php echo $prod[4] ?></td>
-                                    <td class="col-2 pt-4">
-                                        <div class="form-group">
-                                            <form>
-                                                <select class="form-control-xs" id="quantityId<?php echo $prod[5] ?>">
-                                                    <?php for ($i = 1; $i <= 100; $i++) { ?>
-                                                        <option><?php echo $i ?> </option>
-                                                    <?php } ?>
-                                                </select>
-                                            </form>
-                                        </div>
-                                    </td>
-                                    <td class="col-2">
-                                        <a class="btn pt-2 bt-1" role="button" onclick="addToList(<?php echo $prod[5] ?>)"> <img class= "iconAddList" id="iconAddList<?php echo $prod[5] ?>" type="button" data-toggle="tooltip" data-placement="bottom" title="Aggiungi in lista" src="images/plus-circle.svg" height="25" alt="aggiungi alla lista"></a>
-                                    </td>
+                        <table class="table">
+                            <thead>
+                                <tr class="table-secondary">
+                                    <th class="col-2">Supermercato</th>
+                                    <th class="col-2">Indirizzo</th>
+                                    <th class="col-2">Prezzo (€)</th>
+                                    <th class="col-2">Quantità</th>
+                                    <th class="col-2"></th>
                                 </tr>
-                        <?php }
-                                } ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <!-- product not found in selected city -->
+                                <?php if (empty($arr)) { ?>
+                                    <tr class="table-default">
+                                        <td colspan=4>
+                                            <h5> Ci dispiace, non abbiamo informazioni disponibili per la tua città </h5>
+                                        <td>
+                                    <tr>
+                                        <?php } else {
+                                        foreach ($arr as $prod) { ?>
+                                    <tr class="table-default">
+                                        <div class="alert alert-success" role="alert" id="addProd" style="display:none; z-index:50">
+                                            <h5 class="alert-heading">Prodotto aggiunto con successo!</h5>
+                                        </div>
+                                        <div class="alert alert-danger" role="alert" id="prodNoAdd" style="display:none">
+                                            <h5 class="alert-heading">Errore durante l'inserimento nella lista. Riprovare</h5>
+                                        </div>
+                                        <td scope="row"><img class='super-logo' src="<?php echo $prod[0] ?>"></td>
+                                        <td class="col-2 align-middle" id="indirizzo"><?php echo $prod[1] ?>, <?php echo $prod[2] ?> </td>
+                                        <td class="col-2 align-middle"><?php echo $prod[4] ?></td>
+                                        <td class="col-2 pt-4">
+                                            <div class="form-group">
+                                                <form>
+                                                    <select class="form-control-xs" id="quantityId<?php echo $prod[5] ?>">
+                                                        <?php for ($i = 1; $i <= 100; $i++) { ?>
+                                                            <option><?php echo $i ?> </option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </form>
+                                            </div>
+                                        </td>
+                                        <td class="col-2">
+                                            <a class="btn pt-2 bt-1" role="button" onclick="addToList(<?php echo $prod[5] ?>)"> <img class="iconAddList" id="iconAddList<?php echo $prod[5] ?>" type="button" data-toggle="tooltip" data-placement="bottom" title="Aggiungi in lista" src="images/plus-circle.svg" height="25" alt="aggiungi alla lista"></a>
+                                        </td>
+                                    </tr>
+                            <?php }
+                                    } ?>
+                            </tbody>
+                        </table>
                     </div>
                 <?php } ?>
             <?php } ?>

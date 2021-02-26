@@ -371,3 +371,7 @@ max-height: none;
 #checkboxList{
     margin-top: 15px;
 }
+
+#form-filter{
+    padding-right: 50px;
+}
