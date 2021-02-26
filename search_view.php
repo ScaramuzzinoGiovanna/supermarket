@@ -9,14 +9,7 @@ include("search/search.php")
 </head>
 
 <body>
-    <?php include("templates/nav_template.php"); ?>
-    <!--<div class="col-md-6">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-            <li class="breadcrumb-item active"> Cerca</li>
-        </ol>
-    </div>-->
-    
+    <?php include("templates/nav_template.php"); ?>    
     <div class="container containerPaddingMargin">
         <div class="text-center mb-4">
             <h5>Confronta i migliori prezzi per <h5 class= pink-text> "<?php echo $charSearch ?>" </h5> </h5>

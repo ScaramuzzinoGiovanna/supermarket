@@ -161,43 +161,6 @@
     width: 80%;
 }
 
-/*.breadcrumb {
-    background-color: whitesmoke;
-}
-
-.breadcrumb-item + .breadcrumb-item {
-    padding-left: 0.5rem;
-}
-
-.breadcrumb-item + .breadcrumb-item::before {
-    float: left;
-    padding-right: 0.5rem;
-    color: #f3969a;
-    content: "/";
-}
-
-.breadcrumb-item + .breadcrumb-item:hover::before {
-    text-decoration: underline;
-}
-
-.breadcrumb-item + .breadcrumb-item:hover::before {
-    text-decoration: none;
-}
-
-.breadcrumb-item.active {
-    color: #5eb69d;
-    font-weight: bold;
-}
-
-.breadcrumb a {
-    color: #78c2ad;
-}
-
-.breadcrumb a:hover {
-    color: #5eb69d;
-}
-* { box-sizing: border-box; }*/
-
 body {
   font: 16px Arial;
 }
@@ -405,6 +368,6 @@ max-height: none;
 
 }
 
-#checkboxList #quantityBadge{
+#checkboxList{
     margin-top: 15px;
 }
