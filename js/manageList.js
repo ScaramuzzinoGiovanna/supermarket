@@ -10,7 +10,7 @@ function addToList(idProductAtMarket) {
             if (addProd == '0') {
                 $('#iconAddList' + idProductAtMarket).attr("src", "images/check-circle.svg");
                 $('#iconAddList' + idProductAtMarket).attr("class", "iconColor");
-                $('#iconAddList' + idProductAtMarket).attr("title", "Prodotto aggiunto in lista");
+                $('#iconAddList' + idProductAtMarket).attr("title", "Prodotto già in lista");
                 $('#addProd').show();
                 setTimeout(function () {
                     $('#addProd').hide();

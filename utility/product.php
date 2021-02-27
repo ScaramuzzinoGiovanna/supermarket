@@ -86,4 +86,3 @@ if (isset($_SESSION['location'])) {
         }
     }
 }
-echo json_encode($arr);
