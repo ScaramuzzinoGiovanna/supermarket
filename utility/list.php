@@ -13,7 +13,7 @@ if (isset($_SESSION['id'])) {
             ORDER BY `supermarketCity` ASC, `enterpriseName` ASC, `supermarketAddress` ASC";
     if ($result = mysqli_query($con, $query)) {
         $numRows = mysqli_num_rows($result);
-        if ($numRows  = 1) {
+        if ($numRows  > 0) {
             while ($r = mysqli_fetch_assoc($result)) {
                 $addr = $r['supermarketAddress'];
                 $city = $r['supermarketCity'];
