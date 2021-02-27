@@ -63,7 +63,7 @@ include("templates/head_template.php");
                                             <h5 class="alert-heading">Prodotto aggiunto con successo!</h5>
                                         </div>
                                         <div class="alert alert-danger" role="alert" id="prodNoAdd" style="display:none">
-                                            <h5 class="alert-heading">Errore durante l'inserimento nella lista. Riprovare</h5>
+                                            <h5 class="alert-heading">Prodotto già in lista</h5>
                                         </div>
                                         <td scope="row"><img class='super-logo' src="<?php echo $prod[0] ?>"></td>
                                         <td class="col-2 align-middle" id="indirizzo"><?php echo $prod[1] ?>, <?php echo $prod[2] ?> </td>
@@ -80,7 +80,11 @@ include("templates/head_template.php");
                                             </div>
                                         </td>
                                         <td class="col-2">
+                                        <?php if ($prod[6]==0){?>
                                             <a class="btn pt-2 bt-1" role="button" onclick="addToList(<?php echo $prod[5] ?>)"> <img class="iconAddList" id="iconAddList<?php echo $prod[5] ?>" type="button" data-toggle="tooltip" data-placement="bottom" title="Aggiungi in lista" src="images/plus-circle.svg" height="25" alt="aggiungi alla lista"></a>
+                                        <?php }else{?>
+                                            <a class="btn pt-2 bt-1" role="button" onclick="addToList(<?php echo $prod[5] ?>)"> <img class="iconAddList" id="iconAddList<?php echo $prod[5] ?>" type="button" data-toggle="tooltip" data-placement="bottom" title="Prodotto già in lista" src="images/check-circle.svg" height="25" alt="prodotto in lista"></a>
+                                        <?php }?> 
                                         </td>
                                     </tr>
                             <?php }
