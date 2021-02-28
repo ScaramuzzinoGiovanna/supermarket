@@ -13,23 +13,23 @@ include("templates/head_template.php");
         <div class="d-flex justify-content-center h-100">
             <div class="card">
                 <div class="jumbotron-fluid">
-                    <div class="row">
+                    <div class="row align-self-center">
                         <!--product not found-->
                         <?php if ($productError != "") { ?>
-                            <div class="preview col-md-6">
+                            <div class="preview col-md-6 align-self-center">
                                 <img class="prodImg" src="images/exclamation-triangle.svg">
                             </div>
-                            <div class="details col-md-6">
+                            <div class="details col-md-6 align-self-center">
                                 <div class="row align-items-center h-100">
                                     <h1 class="product-title"> <?php echo $productError ?></h1>
                                 </div>
                             </div>
                         <?php } else { ?>
                             <!--product found-->
-                            <div class="preview col-6">
+                            <div class="preview col-6 align-self-center">
                                 <img class="prodImg" src="<?php echo $prodImg ?>">
                             </div>
-                            <div class="details col-6">
+                            <div class="details col-6 align-self-center">
                                 <h1 class="product-title"><?php echo $prodName ?> </h1>
                             </div>
                     </div>
@@ -38,13 +38,12 @@ include("templates/head_template.php");
 
                     <hr class="my-8">
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table mb-0" id="table-prod">
                             <thead>
                                 <tr class="table-secondary">
-                                    <th class="col-2">Supermercato</th>
-                                    <th class="col-2">Indirizzo</th>
-                                    <th class="col-2">Prezzo (€)</th>
-                                    <th class="col-2">Quantità</th>
+                                    <th rowspan="2" class="col-6 text-center">Supermercato</th>
+                                    <th class="col-2 text-center">Prezzo (€)</th>
+                                    <th class="col-2 text-center">Quantità</th>
                                     <th class="col-2"></th>
                                 </tr>
                             </thead>
@@ -65,10 +64,14 @@ include("templates/head_template.php");
                                         <div class="alert alert-danger" role="alert" id="prodNoAdd" style="display:none">
                                             <h5 class="alert-heading">Prodotto già in lista</h5>
                                         </div>
-                                        <td scope="row"><img class='super-logo' src="<?php echo $prod[0] ?>"></td>
-                                        <td class="col-2 align-middle" id="indirizzo"><?php echo $prod[1] ?>, <?php echo $prod[2] ?> </td>
-                                        <td class="col-2 align-middle"><?php echo $prod[4] ?></td>
-                                        <td class="col-2 pt-4">
+                                        <td scope="row">
+                                        <div> <img class='super-logo' src="<?php echo $prod[0] ?>"></div>
+                                        <div>                                        
+                                        <p class="pt-3 mb-0" id="indirizzo"> <?php echo $prod[1] ?>, <?php echo $prod[2] ?> </p>
+                                        </div>
+                                    
+                                        <td class="align-middle text-center"><?php echo $prod[4] ?></td>
+                                        <td class="pt-4 text-center align-middle">
                                             <div class="form-group">
                                                 <form>
                                                     <select class="form-control-xs" id="quantityId<?php echo $prod[5] ?>">
@@ -79,7 +82,7 @@ include("templates/head_template.php");
                                                 </form>
                                             </div>
                                         </td>
-                                        <td class="col-2">
+                                        <td class="col-2 align-middle">
                                         <?php if ($prod[6]==0){?>
                                             <a class="btn pt-2 bt-1" role="button" onclick="addToList(<?php echo $prod[5] ?>)"> <img class="iconAddList" id="iconAddList<?php echo $prod[5] ?>" type="button" data-toggle="tooltip" data-placement="bottom" title="Aggiungi in lista" src="images/plus-circle.svg" height="25" alt="aggiungi alla lista"></a>
                                         <?php }else{?>
@@ -99,7 +102,6 @@ include("templates/head_template.php");
         </div>
     </div>
     <?php include("templates/script_template.php"); ?>
-    <?php include("templates/modals.php"); ?>
     <script type="text/javascript" src="js/manageList.js"></script>
 
 </body>

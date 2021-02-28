@@ -14,7 +14,7 @@ function addToList(idProductAtMarket) {
                 $('#addProd').show();
                 setTimeout(function () {
                     $('#addProd').hide();
-                }, 1000);
+                }, 2000);
             } else if (addProd == '2') {
                 $('#prodNoLoggedModal').modal('show');
             } else {
@@ -25,11 +25,11 @@ function addToList(idProductAtMarket) {
                     $('#iconAddList' + idProductAtMarket).attr("src", icon)
                     $('#iconAddList' + idProductAtMarket).attr("title", "Prodotto aggiunto in lista");
 
-                }, 3000);
+                }, 2000);
                 $('#prodNoAdd').show();
                 setTimeout(function () {
                     $('#prodNoAdd').hide();
-                }, 1000);
+                }, 2000);
             }
         }
     }

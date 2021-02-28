@@ -16,7 +16,7 @@ include("search/search.php")
         </div>
         <div class="card">
             <div class="jumbotron-fluid">
-                <table class="table tableSearchProducts">
+                <table class="table tableSearchProducts mb-0">
                     <tbody>
                         <!--no product searched-->
                     <?php if ($noResult==true) { ?>

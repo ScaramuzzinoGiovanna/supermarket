@@ -234,11 +234,15 @@ img.prodImgList{
      html, body {
         font-size: 1em;
     }
-    th, td {
+    #table-prod td, #table-prod th {
         font-size: 0.8em;
+    }
+    #indirizzo{
+        font-size: 0.6em;
+    }
+    .th , .td{
         padding-left: 0rem;
     }
-
     .btn.add img{
         height:16px;
     }
