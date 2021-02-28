@@ -41,9 +41,9 @@ include("templates/head_template.php");
                         <table class="table mb-0" id="table-prod">
                             <thead>
                                 <tr class="table-secondary">
-                                    <th rowspan="2" class="col-6 text-center">Supermercato</th>
-                                    <th class="col-2 text-center">Prezzo (€)</th>
-                                    <th class="col-2 text-center">Quantità</th>
+                                    <th rowspan="2" class="col-6 text-center align-top">Supermercato</th>
+                                    <th class="col-2 text-center align-top">Prezzo (€)</th>
+                                    <th class="col-2 text-center align-top">Quantità</th>
                                     <th class="col-2"></th>
                                 </tr>
                             </thead>
