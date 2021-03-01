@@ -21,7 +21,7 @@ include("login/reset-password.php");
     <?php
     } else {
     ?>
-        <div class="container">
+        <div class="container mt-5">
             <div class="row">
                 <div class="col text-center">
                     <a class="navbar-brand btn btn-outline-primary logoName mb-5" href="index.php"> SpesaConveninete</a>
