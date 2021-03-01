@@ -14,8 +14,14 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
     <title>Accedi</title>
 </head>
-<body> 
-    <div class="container">
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col text-center">
+                <a class="navbar-brand btn btn-outline-primary logoName mb-5" href="index.php"> SpesaConveninete</a>
+            </div>
+        </div>
         <div class="d-flex justify-content-center h-100">
             <div class="card  border-primary mb-3 card-dim">
                 <div class="card-header title-card">ACCEDI</div>
@@ -57,7 +63,7 @@
                                 }
                                 ?>
                             </div>
-                           <!-- <?php// if ($passwordErr != "") { ?>
+                            <!-- <?php// if ($passwordErr != "") { ?>
                                 <small id="passwordHelp" class="text-danger">Password errata: deve essere di 8-20 caratteri con lettere e numeri</small>
                             <?//php
                             //}

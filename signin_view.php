@@ -17,6 +17,11 @@
 
 <body>
     <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <a class="navbar-brand btn btn-outline-primary logoName mb-5" href="index.php"> SpesaConveninete</a>
+            </div>
+        </div>
         <div class="d-flex justify-content-center h-100">
             <div class="card border-primary mb-3 card-dim">
                 <div class="card-header title-card">REGISTRATI</div>
@@ -38,7 +43,7 @@
                                         <span class="input-group-text borderColorPrimary 
                                         
                                         rounded-left"><img src="images/person.svg"></img></span>
-                                     </div>
+                                    </div>
                                     <input type="text" name="name" required="" class="form-control accesso" id="nome" placeholder="">
                                 </div>
                             </div>
@@ -47,7 +52,7 @@
                                 <div class="input-group mb-2">
                                     <div class="input-group-append">
                                         <span class="input-group-text borderColorPrimary rounded-left"><img src="images/person.svg"></img></span>
-                                     </div>
+                                    </div>
                                     <input type="text" name="surname" required="" class="form-control accesso" id="cognome" placeholder="">
                                 </div>
                             </div>

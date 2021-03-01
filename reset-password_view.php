@@ -1,5 +1,5 @@
-<?php 
-include("login/reset-password.php"); 
+<?php
+include("login/reset-password.php");
 ?>
 
 <!DOCTYPE html>
@@ -22,12 +22,17 @@ include("login/reset-password.php");
     } else {
     ?>
         <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <a class="navbar-brand btn btn-outline-primary logoName mb-5" href="index.php"> SpesaConveninete</a>
+                </div>
+            </div>
             <div class="d-flex justify-content-center h-100">
                 <div class="card border-primary mb-3 card-dim">
                     <div class="card-header title-card">MODIFICA PASSWORD</div>
                     <div class="card-body">
-                        
-                        <?php if ($passwordErr!= "") { ?>
+
+                        <?php if ($passwordErr != "") { ?>
                             <div class="alert alert-dismissible alert-danger">
                                 <button type="button" class="close" data-dismiss="alert">&times; </button>
                                 <strong><?php echo $passwordErr; ?></strong>

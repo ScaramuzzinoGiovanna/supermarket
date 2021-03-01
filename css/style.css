@@ -403,3 +403,9 @@ max-height: none;
 #form-filter{
     padding-right: 50px;
 }
+
+.logoName{
+    font-weight: bold;
+    box-sizing:inherit;
+    color:#5eb69d;
+}
