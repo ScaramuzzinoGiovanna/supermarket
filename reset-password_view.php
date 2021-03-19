@@ -24,7 +24,7 @@ include("login/reset-password.php");
         <div class="container mt-5">
             <div class="row">
                 <div class="col text-center">
-                    <a class="navbar-brand btn btn-outline-primary logoName mb-5" href="index.php"> SpesaConveninete</a>
+                    <a class="navbar-brand btn btn-outline-primary logoName mb-5" href="index.php"> SpesaConveniente</a>
                 </div>
             </div>
             <div class="d-flex justify-content-center h-100">
@@ -49,7 +49,7 @@ include("login/reset-password.php");
                                 <span class="infoIcon"> <img class="pink-tooltip" data-toggle="tooltip-password" src="images/info.svg" alt="info password"> </span>
                                 <div class="input-group mb-2">
                                     <div class="input-group-append">
-                                        <span class="input-group-text iconIll"><img src="images/key.svg"></img></span>
+                                        <span class="input-group-text borderColorPrimary rounded-left"><img src="images/key.svg"></img></span>
                                     </div>
                                     <input type="password" required="" name="password" class="form-control accesso" id="exampleInputPassword1">
                                 </div>
@@ -58,7 +58,7 @@ include("login/reset-password.php");
                                 <label for="exampleInputPassword2">Conferma password</label>
                                 <div class="input-group mb-2">
                                     <div class="input-group-append">
-                                        <span class="input-group-text iconIll"><img src="images/key.svg"></img></span>
+                                        <span class="input-group-text borderColorPrimary rounded-left"><img src="images/key.svg"></img></span>
                                     </div>
                                     <input type="password" required="" name="confirm_password" class="form-control accesso" id="exampleInputPassword2">
                                 </div>

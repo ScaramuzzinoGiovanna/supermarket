@@ -57,12 +57,12 @@ if (isset($_POST["email"]) && (!empty($_POST["email"]))) {
             <p>Caro utente,</p>
             <p>Clicca il link seguente per resettare la tua password.</p>
             <p>-------------------------------------------------------------</p>
-            <p><a href="http://spesaconveniente.altervista.org//reset-password_view.php?key=' . $key . '&email=' . $email . '&action=reset" target="_blank">
-            http://spesaconveniente.altervista.org/reset-password_view.php?key=' . $key . '&email=' . $email . '&action=reset</a></p>
+            <p><a href="https://spesaconveniente.altervista.org//reset-password_view.php?key=' . $key . '&email=' . $email . '&action=reset" target="_blank">
+            https://spesaconveniente.altervista.org/reset-password_view.php?key=' . $key . '&email=' . $email . '&action=reset</a></p>
             <p>-------------------------------------------------------------</p>
             <p>Se non fosse possibile cliccare il link, copialo nella barra degli indirizzi.
-            Il link non sarà più valido dopo un giorno dalla richiesta.</p>
-            <p>Se non hai richiesto la modifica della tua password, ingora questa mail. Tuttavia, ti consigliamo di modificarla per ragioni di sicurezza, nel caso che qualcuno abbia avuto accesso al tuo account.</p>
+            Il link non sar&agrave; pi&uacute; valido dopo un giorno dalla richiesta.</p>
+            <p>Se non hai richiesto la modifica della tua password, ignora questa mail. Tuttavia, ti consigliamo di modificarla per ragioni di sicurezza, nel caso che qualcuno abbia avuto accesso al tuo account.</p>
             <p>Grazie,</p>
             <p>Lo Staff di SpesaConveniente</p>
          </body>
@@ -89,9 +89,13 @@ if (isset($_POST["email"]) && (!empty($_POST["email"]))) {
       $headers[] = "To: ". $email_to;
       $headers[] = "From: SpesaConveniente <spendipocohci@gmail.com>";
 
-      mail($email_to, $subject, $body, implode("\r\n", $headers));
+      $resultmail = mail($email_to, $subject, $body, implode("\r\n", $headers));
 
-      $mailSend =  "Riceverai entro pochi minuti una email con le istruzioni per generare una nuova password!";
+      if ($resultmail){
+         $mailSend =  "Riceverai entro pochi minuti una email con le istruzioni per generare una nuova password!";
+      }
+      
+
 
       // $mail = new PHPMailer();
       // $mail->IsSMTP();

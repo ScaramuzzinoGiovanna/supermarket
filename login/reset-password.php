@@ -17,7 +17,7 @@ if (
     if ($row == "") {
         $error = '<h2>Link non utilizzabile</h2>
         <p>Il link è errato. Potresti aver copiato in modo sbagliato il link dalla mail oppure aver già usato questo link per cambiare password.</p>
-        <p><a href="http://spesaconveniente.altervista.org/password-forgotten_view.php">
+        <p><a href="https://spesaconveniente.altervista.org/password-forgotten_view.php">
         Clicca qui</a> per cambiare password.</p>';
     } else {
         $row = mysqli_fetch_assoc($result);
@@ -27,7 +27,7 @@ if (
         } else {
             $error = '<h2>Link Scaduto</h2>
             <p>Il link è scaduto. Stai cercando di usare un link scaduto che ha validità solo per 24 ore (1 giorno dalla richiesta) </p>
-            <p><a href="http://spesaconveniente.altervista.org/password-forgotten_view.php">
+            <p><a href="https://spesaconveniente.altervista.org/password-forgotten_view.php">
             Clicca qui</a> per cambiare password.</p>';
         }
     }
@@ -63,9 +63,12 @@ if (
         $_SESSION["name"] = $row['name'];
         $_SESSION["surname"] = $row['surname'];
         $_SESSION["email"] = $row['email'];
+        if (!isset($_SESSION["location"])){
+            $_SESSION["location"] = $row['location'];
+        }
         header("Location:index.php");
         //echo '<div class="error"><p>La tua password è stata modificata con successo!.</p>
-        //<p><a href="http://localhost/prove_progetto/login/login.php">
+        //<p><a href="https://localhost/prove_progetto/login/login.php">
         //Premi qui</a> per accedere.</p></div><br />';
     }
 }

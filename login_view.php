@@ -19,7 +19,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col text-center">
-                <a class="navbar-brand btn btn-outline-primary logoName mb-5" href="index.php"> SpesaConveninete</a>
+                <a class="navbar-brand btn btn-outline-primary logoName mb-5" href="index.php"> SpesaConveniente</a>
             </div>
         </div>
         <div class="d-flex justify-content-center h-100">
@@ -46,36 +46,21 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <!--                            <a href="#" >Password dimenticata? </a>-->
                             <div class="input-group mb-2">
                                 <div class="input-group-append">
                                     <span class="input-group-text borderColorPrimary rounded-left"><img src="images/key.svg"></img></span>
                                 </div>
                                 <?php if ($passwordErr == "") { ?>
                                     <input type="password" name="password" required="TRUE" class="form-control accesso " id="exampleInputPassword1" placeholder="">
-                                    <!-- <span class="error"> <?php echo $passwordErr; ?></span> -->
                                 <?php
                                 } else { ?>
-
                                     <input type="password" name="password" required="TRUE" class="form-control is-invalid" id="exampleInputPassword1" placeholder="">
 
                                 <?php
                                 }
                                 ?>
                             </div>
-                            <!-- <?php// if ($passwordErr != "") { ?>
-                                <small id="passwordHelp" class="text-danger">Password errata: deve essere di 8-20 caratteri con lettere e numeri</small>
-                            <?//php
-                            //}
-                            //?>-->
                         </div>
-
-                        <!-- <div class="form-group">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1" checked="">
-                                <label class="custom-control-label" for="customCheck1">Resta connesso</label>
-                            </div></div> -->
-
                         <div class="form-group">
                             <input type="submit" name="submit" value="Accedi" class="btn btn-primary btn-sm login_btn"></input>
                         </div>

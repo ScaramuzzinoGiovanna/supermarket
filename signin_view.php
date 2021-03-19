@@ -19,7 +19,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col text-center">
-                <a class="navbar-brand btn btn-outline-primary logoName mb-5" href="index.php"> SpesaConveninete</a>
+                <a class="navbar-brand btn btn-outline-primary logoName mb-5" href="index.php"> SpesaConveniente</a>
             </div>
         </div>
         <div class="d-flex justify-content-center h-100">
@@ -85,8 +85,6 @@
                                 </div>
                                 <input type="password" required="" name="password" class="form-control accesso" id="exampleInputPassword1">
                             </div>
-                            <!--                        <small id="passwordHelp" class="form-text text-muted">Le password devono essere composte da-->
-                            <!--                            almeno 8 caratteri e numeri , e massimo 20.</small>-->
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword2">Conferma password</label>
