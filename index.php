@@ -11,16 +11,15 @@ include("templates/head_template.php");
 <body>
     <?php include("templates/nav_template.php"); ?>
 
-    <div>
-        <h3 class="title">Catalogo prodotti presenti nei supermercati di Italia</h3>
-        <p class="subtitle">Cerca all'interno del nostro catalogo e crea la tua lista della spesa selezionando i prodotti
-            desiderati.<br>
-            Per ogni prodotto puoi osservare il supermercato con il prezzo più conveniente</p>
-
-        <!--    <form class="form-inline my-2 my-lg-0 search">-->
-        <!--      <input class="form-control mr-sm-2 col-sm-10" type="text" placeholder="Cerca prodotti">-->
-        <!--      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Cerca</button>-->
-        <!--    </form>-->
+    <div class="container containerPaddingMargin">
+        <h2 class="title">Catalogo prodotti presenti nei supermercati di Italia</h3>
+        <div class='container containerPadding300'>
+        <h6 class="text-left pb-3"> Per ogni prodotto puoi osservare il supermercato con il prezzo più conveniente. </h6> 
+        <p class="text-left"> <img clas src ="images/search-black.svg" alt="cerca"> &nbsp Cerca all'interno del nostro catalogo i prodotti
+            desiderati. 
+        <p class="text-left">  <img clas src ="images/geo-alt.svg" alt="geolocalizzazione">  &nbsp Localizzati per trovare i prodotti disponibili nella tua zona. 
+        <p class="text-left"> <img class src="images/plus-circle.svg" alt="aggiungi prodotto">  &nbsp Aggiungi i prodotti alla lista della spesa. È necassaria la registrazione al sito.</p>
+        <div>
     </div>
     <?php include("templates/script_template.php"); ?>
 
