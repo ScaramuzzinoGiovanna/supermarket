@@ -55,7 +55,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="submit" class="btn btn-primary btn-sm login_btn"></input>
+                            <input type="submit" name="submit" value="Invia" class="btn btn-primary btn-sm login_btn"></input>
                         </div>
                     </form>
                 </div>
