@@ -27,7 +27,7 @@ include("search/search.php")
                           <!--if product searched-->
                         <?php foreach ($arr as $prod) { ?>
                             <tr>
-                                <th>
+                                <th class="align-middle">
                                     <a href="product_view.php?product=<?php echo $prod[2] ?>"> <?php echo $prod[0] ?></a>
                                 </th>
                                 <td> <img class="prodImg" src="<?php echo $prod[1] ?>">
