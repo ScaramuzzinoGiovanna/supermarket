@@ -201,9 +201,13 @@ body {
 }
 
 img.prodImg{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     width: 150px;
     height: 150px;
 }
+
 img.prodImgList{
     width: 50px;
     height: 50px;
@@ -230,6 +234,15 @@ img.prodImgList{
 
 .marginTop{
     margin-top: 1rem;
+}
+
+.product-title{
+    font-weight: bolder;
+    text-align:center;
+}
+
+.paddingTop{
+    padding-top: 10px;
 }
 
 /* xs < 768 */
@@ -264,7 +277,7 @@ img.prodImgList{
 
 /* sm */
 @media screen and (min-width: 768px) {
-    h1{font-size: 1.6em;}
+    h1{font-size: 1.4em;}
     html, body {
         font-size: 1em;
     }

@@ -26,10 +26,10 @@ include("templates/head_template.php");
                             </div>
                         <?php } else { ?>
                             <!--product found-->
-                            <div class="preview col-6 align-self-center">
+                            <div class="preview paddingTop col-3 align-self-center">
                                 <img class="prodImg" src="<?php echo $prodImg ?>">
                             </div>
-                            <div class="details col-6 align-self-center">
+                            <div class="details col-9 align-self-center">
                                 <h1 class="product-title"><?php echo $prodName ?> </h1>
                             </div>
                     </div>
