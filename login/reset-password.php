@@ -31,9 +31,6 @@ if (
             Clicca qui</a> per cambiare password.</p>';
         }
     }
-    //if ($error != "") {
-        //echo "<div class='error'>" . $error . "</div><br />";
-    //}
 } // isset email key validate end
 
 
@@ -67,9 +64,6 @@ if (
             $_SESSION["location"] = $row['location'];
         }
         header("Location:index.php");
-        //echo '<div class="error"><p>La tua password è stata modificata con successo!.</p>
-        //<p><a href="https://localhost/prove_progetto/login/login.php">
-        //Premi qui</a> per accedere.</p></div><br />';
     }
 }
 ?>

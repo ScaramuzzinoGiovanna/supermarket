@@ -28,11 +28,6 @@ if (isset($_SESSION['location'])) {
 
     $location = $_SESSION['location'];
 
-
-    
-
-
-
     if (isset($_SESSION['id'])) {
         $queryList = "SELECT list.id AS listId, product.name AS productName, product.imgpath AS productImgpath, productatmarket.price AS productPrice, supermarket.address AS supermarketAddress, supermarket.city AS supermarketCity, enterprise.name AS enterpriseName, list.quantity as listQuantity
             FROM ((((list JOIN productatmarket ON list.productatmarket=productatmarket.id) JOIN product ON product.id=productatmarket.product) JOIN supermarket ON supermarket.id=productatmarket.supermarket) JOIN enterprise ON supermarket.enterprise=enterprise.id)

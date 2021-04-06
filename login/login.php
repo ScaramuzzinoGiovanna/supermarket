@@ -54,34 +54,4 @@ if (count($_POST) > 0) {
         $message = "Password non valida!<br>" . $passwordErr;
     }
 }
-
 ?>
-
-<!-- <html>
-
-<head>
-    <title>Accedi</title>
-</head>
-
-<body>
-    <form name="frmUser" method="post" action="" align="center">
-        <div class="message"><?php if ($message != "") {
-                                    echo $message;
-                                } ?></div>
-        <h3 align="center">Accedi</h3>
-        email:
-        <input type="text" name="email">
-        <br>
-        <span class="error"> <?php echo $mailErr; ?></span>
-        <br>
-        Password:
-        <input type="password" name="password">
-        <br>
-        <span class="error"> <?php echo $passwordErr; ?></span>
-        <br>
-        <input type="submit" name="submit" value="Accedi">
-        <a href="password-forgotten.php" tite="reset_password"><input type="button" value="Reimposta Password"></a>
-    </form>
-</body>
-
-</html> -->
