@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $('[data-toggle="tooltip-password"]').tooltip({
         placement: 'right',
-        title: " <strong>Le password devono essere composte da:</strong> <ul> <li> almeno un carattere e almeno un numero,</li><li> minimo 8 </li><li> massimo 20</li>",
+        title: " <strong>Le password devono essere composte da:</strong> minimo 8 e massimo 20 caratteri con almeno una lettera e almeno un numero",
         animation: true,
         html: true
     });
