@@ -1,8 +1,8 @@
 <?php
-    $servername='localhost';
-    $username='spesaconveniente';
+    $servername='';
+    $username='';
     $db_password='';
-    $dbname = "my_spesaconveniente";
+    $dbname = "";
     $con=mysqli_connect($servername,$username,$db_password,"$dbname");
       if(!$con){
           die('Impossibile connettersi');
